@@ -24,55 +24,54 @@
 <body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-600 selection:text-white">
 
     <!-- HEADER / NAVIGATION -->
-    <!-- HEADER / NAVIGATION -->
-<header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50">
-  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-    
-    <!-- Top Row: Brand Title & Language Selector -->
-    <div class="flex items-center justify-between w-full md:w-auto gap-2">
-      <a href="#" class="font-cinzel text-xs sm:text-sm md:text-xl tracking-wider sm:tracking-widest font-semibold uppercase text-zinc-100 truncate">
-        ALEXANDER IVANOVSKI
-      </a>
-      
-      <!-- Language Selector Dropdown -->
-      <div class="flex items-center shrink-0">
-        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs rounded-full px-2.5 py-1 focus:outline-none focus:border-amber-500">
-          <option value="en">English</option>
-          <option value="de">Deutsch</option>
-          <option value="es">Español</option>
-          <option value="it">Italiano</option>
-          <option value="zh">中文</option>
-          <option value="ru">Русский</option>
-        </select>
+    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        
+        <!-- Top Row: Brand Title & Language Selector -->
+        <div class="flex items-center justify-between w-full md:w-auto gap-2">
+          <a href="#" class="font-cinzel text-xs sm:text-sm md:text-xl tracking-wider sm:tracking-widest font-semibold uppercase text-zinc-100 truncate">
+            ALEXANDER IVANOVSKI
+          </a>
+          
+          <!-- Language Selector Dropdown -->
+          <div class="flex items-center shrink-0">
+            <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs rounded-full px-2.5 py-1 focus:outline-none focus:border-amber-500">
+              <option value="en">English</option>
+              <option value="de">Deutsch</option>
+              <option value="es">Español</option>
+              <option value="it">Italiano</option>
+              <option value="zh">中文</option>
+              <option value="ru">Русский</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Collections Navigation (Responsive with Vertical Dividers) -->
+        <nav class="w-full overflow-x-auto no-scrollbar py-1 md:py-0">
+          <ul class="flex items-center space-x-0 whitespace-nowrap text-xs md:text-sm uppercase tracking-wider text-zinc-400">
+            <li class="flex items-center pr-3 md:pr-4">
+              <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
+            </li>
+            <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+              <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
+            </li>
+            <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+              <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
+            </li>
+            <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+              <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
+            </li>
+            <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+              <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Classes</a>
+            </li>
+            <li class="flex items-center pl-3 md:pl-4 border-l border-zinc-700/60">
+              <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
+            </li>
+          </ul>
+        </nav>
+
       </div>
-    </div>
-
-    <!-- Collections Navigation (Responsive with Vertical Dividers) -->
-    <nav class="w-full overflow-x-auto no-scrollbar py-1 md:py-0">
-      <ul class="flex items-center space-x-0 whitespace-nowrap text-xs md:text-sm uppercase tracking-wider text-zinc-400">
-        <li class="flex items-center pr-3 md:pr-4">
-          <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
-        </li>
-        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
-          <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
-        </li>
-        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
-          <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
-        </li>
-        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
-          <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
-        </li>
-        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
-          <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Classes</a>
-        </li>
-        <li class="flex items-center pl-3 md:pl-4 border-l border-zinc-700/60">
-          <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
-        </li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
+    </header>
 
     <!-- HERO SECTION WITH CYCLING ARTWORK BACKGROUND -->
     <section id="hero-section" class="relative h-screen flex items-center justify-center bg-zinc-900 overflow-hidden pt-20">
@@ -312,6 +311,16 @@
         </div>
     </section>
 
+    <!-- FULL-SCREEN IMAGE VIEW MODAL (LIGHTBOX) -->
+    <div id="image-viewer-modal" class="fixed inset-0 z-[60] bg-zinc-950/95 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeImageViewer()">
+        <button onclick="closeImageViewer()" class="absolute top-6 right-6 text-white bg-zinc-900/80 hover:bg-amber-600 rounded-full w-12 h-12 flex items-center justify-center border border-zinc-700 transition-colors z-50 cursor-pointer">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <div class="max-w-5xl max-h-[90vh] flex items-center justify-center" onclick="event.stopPropagation()">
+            <img id="image-viewer-src" src="" alt="Full View Artwork" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-zinc-800">
+        </div>
+    </div>
+
     <!-- FULL ARCHIVE MODAL (ALL UPLOADED PAINTINGS) -->
     <div id="archive-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
         <div class="max-w-7xl mx-auto">
@@ -405,7 +414,7 @@
 
     <!-- SCRIPT: TRANSLATIONS, SWIPEABLE ROWS, DYNAMIC ARRAYS -->
     <script>
-        // Array containing regular paintings
+        // Array containing regular paintings (Updated with screenshot files)
         const allPaintings = [
             "IMG_5118.jpeg", "IMG_5183.jpeg", "IMG_5184.jpeg",
             "IMG_7315.jpeg", "IMG_7317.jpeg", "IMG_7319.jpeg", "IMG_7321.jpeg",
@@ -417,7 +426,14 @@
             "IMG_7346.jpeg", "IMG_7347.jpeg", "IMG_7348.jpeg", "IMG_7349.jpeg",
             "IMG_7350.jpeg", "IMG_7351.jpeg", "IMG_7352.jpeg", "IMG_7353.jpeg",
             "IMG_7354.jpeg", "IMG_7355.jpeg", "IMG_7452.jpeg", "IMG_7454.jpeg", 
-            "IMG_7456.jpeg"
+            "IMG_7456.jpeg", "IMG_7457.jpeg", "IMG_7458.jpeg", "IMG_7465.jpeg",
+            "IMG_7466.jpeg", "IMG_7468.jpeg", "IMG_7469.jpeg", "IMG_7472.jpeg",
+            "IMG_7474.jpeg", "IMG_7475.jpeg", "IMG_7476.jpeg", "IMG_7477.jpeg",
+            "IMG_7479.jpeg", "IMG_7482.jpeg", "IMG_7491.jpeg", "IMG_7492.jpeg",
+            "IMG_7493.jpeg", "IMG_7494.jpeg", "IMG_7495.jpeg", "IMG_7496.jpeg",
+            "IMG_7497.jpeg", "IMG_7498.jpeg", "IMG_7500.jpeg", "IMG_7501.jpeg",
+            "IMG_7513.jpeg", "IMG_7519.jpeg", "IMG_7520.jpeg", "IMG_7525.jpeg",
+            "IMG_7527.jpeg"
         ];
 
         // Array containing Wild Wild West series images (New Collection)
@@ -894,13 +910,25 @@
             return arr;
         }
 
+        // Full-Screen Image Lightbox Viewer Controls
+        function openImageViewer(imgSrc) {
+            const viewerModal = document.getElementById('image-viewer-modal');
+            const viewerImg = document.getElementById('image-viewer-src');
+            viewerImg.src = imgSrc;
+            viewerModal.classList.remove('hidden');
+        }
+
+        function closeImageViewer() {
+            document.getElementById('image-viewer-modal').classList.add('hidden');
+        }
+
         // Populate Swipeable Row for Wild Wild West (Randomized on every page load)
         const wildWestGrid = document.getElementById('wildwest-grid');
         let wildWestHTML = '';
         const randomizedWildWest = shuffleArray(wildWildWestImages);
         randomizedWildWest.forEach((img, index) => {
             wildWestHTML += `
-                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openWildWestModal()">
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openImageViewer('${img}')">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Wild Wild West ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
@@ -917,12 +945,12 @@
         let swipeHTML = '';
         allPaintings.forEach((img, index) => {
             swipeHTML += `
-                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openArchiveModal()">
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openImageViewer('${img}')">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Painting ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
                             <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Archive Piece</span>
-                            <h3 class="font-cinzel text-lg font-medium text-white mt-1">View in Full Gallery</h3>
+                            <h3 class="font-cinzel text-lg font-medium text-white mt-1">Click to Enlarge</h3>
                         </div>
                     </div>
                 </div>
@@ -936,7 +964,7 @@
         const randomizedToyStories = shuffleArray(toyStoriesImages);
         randomizedToyStories.forEach((img, index) => {
             toyHTML += `
-                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openToyStoriesModal()">
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openImageViewer('${img}')">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
@@ -954,7 +982,7 @@
         const randomizedPortraits = shuffleArray(portraitsImages);
         randomizedPortraits.forEach((img, index) => {
             portraitsHTML += `
-                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openPortraitsModal()">
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openImageViewer('${img}')">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Portraits ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
@@ -971,7 +999,7 @@
         let archiveHTML = '';
         allPaintings.forEach((img, index) => {
             archiveHTML += `
-                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80 cursor-pointer" onclick="openImageViewer('${img}')">
                     <img src="${img}" alt="Painting ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                         <span class="text-amber-400 text-xs font-mono">Piece #${index + 1}</span>
@@ -986,7 +1014,7 @@
         let wildWestModalHTML = '';
         wildWildWestImages.forEach((img, index) => {
             wildWestModalHTML += `
-                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80 cursor-pointer" onclick="openImageViewer('${img}')">
                     <img src="${img}" alt="Wild Wild West ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                         <span class="text-amber-400 text-xs font-mono">Wild Wild West #${index + 1}</span>
@@ -1001,7 +1029,7 @@
         let toyModalHTML = '';
         toyStoriesImages.forEach((img, index) => {
             toyModalHTML += `
-                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80 cursor-pointer" onclick="openImageViewer('${img}')">
                     <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                         <span class="text-amber-400 text-xs font-mono">Toy Stories #${index + 1}</span>
@@ -1016,7 +1044,7 @@
         let portraitsModalHTML = '';
         portraitsImages.forEach((img, index) => {
             portraitsModalHTML += `
-                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80 cursor-pointer" onclick="openImageViewer('${img}')">
                     <img src="${img}" alt="Portraits ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                         <span class="text-amber-400 text-xs font-mono">Portraits #${index + 1}</span>
