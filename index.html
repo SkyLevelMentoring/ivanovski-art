@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Ivanovski | Fine Art & Painting</title>
+    <title id="meta-title">Alexander Ivanovski | Fine Art & Painting</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome for Icons -->
@@ -16,22 +16,42 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-cinzel { font-family: 'Cinzel', serif; }
         .fade-bg { transition: background-image 1s ease-in-out; }
+        /* Hide scrollbar for clean swipeable row on mobile/tablet */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-600 selection:text-white">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-cinzel text-lg md:text-xl tracking-widest font-semibold uppercase">Alexander Ivanovski</a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wider uppercase">
-                <a href="#gallery" class="hover:text-amber-500 transition-colors">Paintings</a>
-                <a href="#classes" class="hover:text-amber-500 transition-colors">Art Classes</a>
-                <a href="#press" class="hover:text-amber-500 transition-colors">Press & Awards</a>
+    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-cinzel text-sm sm:text-base md:text-xl tracking-widest font-semibold uppercase truncate max-w-[180px] sm:max-w-none">Alexander Ivanovski</a>
+            <nav class="hidden lg:flex items-center space-x-6 text-xs md:text-sm tracking-wider uppercase">
+                <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
+                <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
+                <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Art Classes</a>
+                <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
             </nav>
-            <div class="flex items-center space-x-4">
-                <a href="mailto:ivanovskialexander@gmail.com" class="text-sm border border-zinc-700 hover:border-amber-500 px-4 py-2 rounded-full transition-all">Get in Touch</a>
+            <div class="flex items-center space-x-3">
+                <!-- Language Selector Dropdown -->
+                <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs rounded-full px-3 py-2 focus:outline-none focus:border-amber-500 cursor-pointer">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="zh">中文</option>
+                    <option value="ru">Русский</option>
+                </select>
+                <a href="mailto:ivanovskialexander@gmail.com" class="hidden sm:inline-block text-xs md:text-sm border border-zinc-700 hover:border-amber-500 px-4 py-2 rounded-full transition-all" data-i18n="get-in-touch">Get in Touch</a>
             </div>
+        </div>
+        <!-- Mobile Sub-nav bar -->
+        <div class="lg:hidden flex items-center justify-around bg-zinc-900/90 border-t border-zinc-800/80 px-2 py-2 text-xs uppercase tracking-wider">
+            <a href="#gallery" class="hover:text-amber-500" data-i18n="nav-paintings">Paintings</a>
+            <a href="#toy-stories" class="hover:text-amber-500" data-i18n="nav-toy-stories">Toy Stories</a>
+            <a href="#classes" class="hover:text-amber-500" data-i18n="nav-classes">Classes</a>
+            <a href="#press" class="hover:text-amber-500" data-i18n="nav-press">Press</a>
         </div>
     </header>
 
@@ -40,90 +60,90 @@
         <div id="hero-bg" class="absolute inset-0 opacity-40 bg-cover bg-center fade-bg" style="background-image: url('IMG_7315.jpeg');"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
         <div class="relative z-10 text-center max-w-3xl px-6">
-            <span class="text-amber-500 tracking-[0.3em] uppercase text-xs font-semibold block mb-4">Painter & Artist</span>
-            <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">Art as a Frame</h1>
-            <p class="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-xl mx-auto">Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.</p>
+            <span class="text-amber-500 tracking-[0.3em] uppercase text-xs font-semibold block mb-4" data-i18n="hero-subtitle">Painter & Artist</span>
+            <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6" data-i18n="hero-title">Art as a Frame</h1>
+            <p class="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-xl mx-auto" data-i18n="hero-desc">Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#gallery" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all">Explore Paintings</a>
-                <button onclick="openArchiveModal()" class="inline-block border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-full hover:border-amber-500 transition-all cursor-pointer">View Full Archive</button>
+                <a href="#gallery" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all text-sm md:text-base" data-i18n="hero-btn-explore">Explore Paintings</a>
+                <button onclick="openArchiveModal()" class="inline-block border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-full hover:border-amber-500 transition-all cursor-pointer text-sm md:text-base" data-i18n="hero-btn-archive">View Full Archive</button>
             </div>
         </div>
     </section>
 
-    <!-- PAINTINGS / GALLERY SECTION -->
-    <section id="gallery" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+    <!-- PAINTINGS / SWIPEABLE GALLERY SECTION -->
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 md:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
             <div>
-                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Visual Archive</span>
-                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Featured Paintings</h2>
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="gallery-tag">Visual Archive</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2" data-i18n="gallery-title">Featured Paintings</h2>
             </div>
             <button onclick="openArchiveModal()" class="mt-4 md:mt-0 text-sm text-amber-500 hover:text-amber-400 font-medium inline-flex items-center cursor-pointer">
-                View All Paintings in Archive <i class="fa-solid fa-arrow-right ml-2"></i>
+                <span data-i18n="gallery-view-all">View All Paintings in Archive</span> <i class="fa-solid fa-arrow-right ml-2"></i>
             </button>
         </div>
 
-        <!-- Curated Grid of Featured Paintings -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="featured-grid">
-            <div class="artwork-item group cursor-pointer" onclick="openArchiveModal()">
-                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
-                    <img src="IMG_7315.jpeg" alt="Painting Archive" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Collection Archive</span>
-                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Explore Full Gallery</h3>
-                    </div>
-                </div>
+        <!-- Swipe Note for Mobile / Tablet -->
+        <div class="flex items-center text-xs text-amber-400/80 mb-4 font-mono tracking-wide">
+            <i class="fa-solid fa-arrows-left-right mr-2 animate-pulse"></i> <span data-i18n="swipe-note">Swipe horizontally to view more artwork</span>
+        </div>
+
+        <!-- Swipeable Row Container -->
+        <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-6 snap-x snap-mandatory" id="swipeable-grid">
+            <!-- Populated dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- NEW SECTION: TOY STORIES -->
+    <section id="toy-stories" class="py-24 bg-zinc-900/30 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="mb-12">
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-tag">New Series</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Toy Stories</h2>
+                <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="toystories-desc">Explore the latest collection series featuring unique narrative compositions.</p>
             </div>
-            <div class="artwork-item group cursor-pointer" onclick="openArchiveModal()">
-                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
-                    <img src="IMG_7322.jpeg" alt="Painting Archive" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Collection Archive</span>
-                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Explore Full Gallery</h3>
-                    </div>
-                </div>
+
+            <!-- Swipe Note for Toy Stories -->
+            <div class="flex items-center text-xs text-amber-400/80 mb-4 font-mono tracking-wide">
+                <i class="fa-solid fa-arrows-left-right mr-2 animate-pulse"></i> <span data-i18n="swipe-note">Swipe horizontally to view more artwork</span>
             </div>
-            <div class="artwork-item group cursor-pointer" onclick="openArchiveModal()">
-                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
-                    <img src="IMG_7335.jpeg" alt="Painting Archive" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Collection Archive</span>
-                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Explore Full Gallery</h3>
-                    </div>
-                </div>
+
+            <!-- Swipeable Row for Toy Stories -->
+            <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-6 snap-x snap-mandatory" id="toystories-grid">
+                <!-- Populated dynamically via JS -->
             </div>
         </div>
     </section>
 
     <!-- ART CLASSES & BOOKING SECTION -->
     <section id="classes" class="py-24 bg-zinc-900/50 border-y border-zinc-900">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Mentorship & Masterclasses</span>
-                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-6">Learn Classical & Narrative Painting</h2>
-                <p class="text-zinc-400 font-light mb-6">Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.</p>
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="classes-tag">Mentorship & Masterclasses</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="classes-title">Learn Classical & Narrative Painting</h2>
+                <p class="text-zinc-400 font-light mb-6 text-sm md:text-base" data-i18n="classes-desc">Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.</p>
                 <ul class="space-y-4 text-sm text-zinc-300 mb-8">
-                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Composition & Framing Techniques</li>
-                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Oil & Acrylic Training for Kids & Adults</li>
-                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Individual Portfolio Development</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> <span data-i18n="classes-li-1">Composition & Framing Techniques</span></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> <span data-i18n="classes-li-2">Oil & Acrylic Training for Kids & Adults</span></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> <span data-i18n="classes-li-3">Individual Portfolio Development</span></li>
                 </ul>
-                <button onclick="openBookingModal()" class="bg-amber-600 hover:bg-amber-500 text-white font-medium px-8 py-4 rounded-full transition-all cursor-pointer">Book a Class Session</button>
+                <button onclick="openBookingModal()" class="bg-amber-600 hover:bg-amber-500 text-white font-medium px-8 py-4 rounded-full transition-all cursor-pointer text-sm md:text-base" data-i18n="classes-btn">Book a Class Session</button>
             </div>
-            <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
-                <h3 class="font-cinzel text-2xl font-semibold mb-4">Class Overview</h3>
+            <div class="bg-zinc-900 p-6 md:p-8 rounded-2xl border border-zinc-800">
+                <h3 class="font-cinzel text-xl md:text-2xl font-semibold mb-4" data-i18n="classes-overview-title">Class Overview</h3>
                 <div class="space-y-6 text-sm text-zinc-400">
                     <div class="border-b border-zinc-800 pb-4">
                         <div class="flex justify-between font-semibold text-white mb-1">
-                            <span>Youth Art Atelier (Kids)</span>
-                            <span class="text-amber-500">Weekly Group</span>
+                            <span data-i18n="class-1-title">Youth Art Atelier (Kids)</span>
+                            <span class="text-amber-500" data-i18n="class-1-badge">Weekly Group</span>
                         </div>
-                        <p>Encouraging spatial imagination and drawing fundamentals through engaging projects.</p>
+                        <p data-i18n="class-1-desc">Encouraging spatial imagination and drawing fundamentals through engaging projects.</p>
                     </div>
                     <div>
                         <div class="flex justify-between font-semibold text-white mb-1">
-                            <span>Masterclass (Advanced)</span>
-                            <span class="text-amber-500">By Arrangement</span>
+                            <span data-i18n="class-2-title">Masterclass (Advanced)</span>
+                            <span class="text-amber-500" data-i18n="class-2-badge">By Arrangement</span>
                         </div>
-                        <p>Deep dive into figurative accuracy, dramatic setups, and layered storytelling.</p>
+                        <p data-i18n="class-2-desc">Deep dive into figurative accuracy, dramatic setups, and layered storytelling.</p>
                     </div>
                 </div>
             </div>
@@ -131,106 +151,106 @@
     </section>
 
     <!-- PRESS & AWARDS SECTION -->
-    <section id="press" class="py-24 max-w-7xl mx-auto px-6">
-        <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Recognition</span>
-        <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-12">Press & Awards</h2>
+    <section id="press" class="py-24 max-w-7xl mx-auto px-4 md:px-6">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="press-tag">Recognition</span>
+        <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-12" data-i18n="press-title">Press & Awards</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Nürnberger Nachrichten — Sept 2005</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Vom Kino und alten Meistern inspiriert</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Vom Kino und alten Meistern inspiriert</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Review by Birgit Ruf on the Kunstpreis-schau exhibition, detailing cinematic framing and themes.</p>
                 </div>
-                <a href="https://www.nn.de/fuerth/dekadenz-und-verganglichkeit-dieser-nn-kunstpreistrager-zeigt-seine-gemalde-in-furth-1.14628684" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.nn.de/fuerth/dekadenz-und-verganglichkeit-dieser-nn-kunstpreistrager-zeigt-seine-gemalde-in-furth-1.14628684" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="read-article">Read Article</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">FLZ — Dachsbach</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Stadt und Land: Dachsbach wird zur Kunstmeile</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Stadt und Land: Dachsbach wird zur Kunstmeile</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Coverage of local exhibition and regional art milestones.</p>
                 </div>
-                <a href="https://www.flz.de/stadt-und-land-dachsbach-wird-zur-kunstmeile/cnt-id-ps-ac82c0bc-c11a-4c9a-aeee-ac97bb86850b" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.flz.de/stadt-und-land-dachsbach-wird-zur-kunstmeile/cnt-id-ps-ac82c0bc-c11a-4c9a-aeee-ac97bb86850b" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="read-article">Read Article</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Buchfreund Publication</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Malerei von 2005 bis 2011</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Malerei von 2005 bis 2011</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Catalog and monograph compilation covering key creative years.</p>
                 </div>
-                <a href="https://www.buchfreund.de/de/d/p/100840482/alexander-ivanovski-malerei-von-2005-bis-2011" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">View Publication <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.buchfreund.de/de/d/p/100840482/alexander-ivanovski-malerei-von-2005-bis-2011" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="view-publication">View Publication</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Nürnberger Nachrichten — Fürth</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Dekadenz und Vergänglichkeit</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Dekadenz und Vergänglichkeit</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Feature on paintings showcased in Fürth exploring themes of time and luxury.</p>
                 </div>
-                <a href="https://www.nn.de/fuerth/dekadenz-und-verganglichkeit-dieser-nn-kunstpreistrager-zeigt-seine-gemalde-in-furth-1.14628684" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.nn.de/fuerth/dekadenz-und-verganglichkeit-dieser-nn-kunstpreistrager-zeigt-seine-gemalde-in-furth-1.14628684" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="read-article">Read Article</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Fürth.tv Video Feature</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Gastspiel Video Coverage</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Gastspiel Video Coverage</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Video report and visual walk-through highlighting the regional Gastspiel art showcase.</p>
                 </div>
-                <a href="https://www.f%C3%BCrth.tv/gastspiel-2021/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Watch Video <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.f%C3%BCrth.tv/gastspiel-2021/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="watch-video">Watch Video</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Nürnberger Nachrichten</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Rathaus Art Placement Discussion</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Rathaus Art Placement Discussion</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Public discussion and press regarding municipal artwork acquisitions and exhibitions.</p>
                 </div>
-                <a href="https://www.nn.de/fuerth/ein-alt-ob-auf-leinwand-doch-im-further-rathaus-aufgehangt-wird-das-werk-nicht-aus-gutem-grund-1.14294563" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Read Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.nn.de/fuerth/ein-alt-ob-auf-leinwand-doch-im-further-rathaus-aufgehangt-wird-das-werk-nicht-aus-gutem-grund-1.14294563" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="read-article">Read Article</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Dümmlers Blog — 2018</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Preußische Glut</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Preußische Glut</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Critique and commentary covering the Kunstpreis entries and exhibitions.</p>
                 </div>
-                <a href="https://duemmlersblog.wordpress.com/2018/07/20/kunstpreis-2018-preussische-glut/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">Read Post <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://duemmlersblog.wordpress.com/2018/07/20/kunstpreis-2018-preussische-glut/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="read-post">Read Post</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Künstlerbund Schwabach</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Exhibition Archive</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Exhibition Archive</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Official artist registry and historical exhibition listings with Künstlerbund Schwabach.</p>
                 </div>
-                <a href="https://www.kuenstlerbund-schwabach.de/ausstellungen/alexander-ivanovski/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">View Archive <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.kuenstlerbund-schwabach.de/ausstellungen/alexander-ivanovski/" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="view-archive">View Archive</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Rokoko Ansbach — 2025</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Exhibition Brochure</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Exhibition Brochure</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Detailed exhibition program brochure featuring works and cultural events.</p>
                 </div>
-                <a href="https://www.tourismus-ansbach.de/fileadmin/user_upload/PDFs/Rokoko-2025_Broschuere_ausfuehrlich_Stand_April25.pdf" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">View PDF <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://www.tourismus-ansbach.de/fileadmin/user_upload/PDFs/Rokoko-2025_Broschuere_ausfuehrlich_Stand_April25.pdf" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="view-pdf">View PDF</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
-            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
+            <div class="p-6 md:p-8 rounded-xl bg-zinc-900 border border-zinc-800/80 flex flex-col justify-between">
                 <div>
                     <span class="text-xs text-zinc-500 font-mono">Kunst in Dachsbach</span>
-                    <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Event Flyer & Participation</h3>
+                    <h3 class="font-cinzel text-lg md:text-xl font-medium text-white mt-2 mb-3">Event Flyer & Participation</h3>
                     <p class="text-zinc-400 text-sm font-light mb-4">Official promotional flyer outlining the regional art trail exhibition.</p>
                 </div>
-                <a href="https://kunst-in-dachsbach.de/wp-content/uploads/2024/06/Kunst-in-Dachsbach-2024-Flyer.pdf" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2">View Flyer <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                <a href="https://kunst-in-dachsbach.de/wp-content/uploads/2024/06/Kunst-in-Dachsbach-2024-Flyer.pdf" target="_blank" class="text-amber-500 text-sm hover:underline inline-flex items-center mt-2"><span data-i18n="view-flyer">View Flyer</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
             </div>
         </div>
     </section>
 
     <!-- FULL ARCHIVE MODAL (ALL UPLOADED PAINTINGS) -->
-    <div id="archive-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-6 md:p-12">
+    <div id="archive-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
         <div class="max-w-7xl mx-auto">
-            <div class="flex justify-between items-center mb-12 border-b border-zinc-800 pb-6">
+            <div class="flex justify-between items-center mb-8 md:mb-12 border-b border-zinc-800 pb-6">
                 <div>
-                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Complete Collection</span>
-                    <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-1">Full Painting Archive</h2>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="modal-tag">Complete Collection</span>
+                    <h2 class="font-cinzel text-2xl md:text-4xl font-bold mt-1" data-i18n="modal-title">Full Painting Archive</h2>
                 </div>
-                <button onclick="closeArchiveModal()" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all cursor-pointer border border-zinc-800">
-                    <i class="fa-solid fa-xmark mr-2"></i> Close Archive
+                <button onclick="closeArchiveModal()" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer border border-zinc-800">
+                    <i class="fa-solid fa-xmark mr-2"></i> <span data-i18n="modal-close">Close Archive</span>
                 </button>
             </div>
-            <!-- Auto-generated grid containing all 28 uploaded images -->
+            <!-- Auto-generated grid containing all uploaded images -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="modal-image-grid">
                 <!-- Dynamically populated via script -->
             </div>
@@ -239,10 +259,10 @@
 
     <!-- FOOTER / CONTACT -->
     <footer class="bg-zinc-950 border-t border-zinc-900 py-16">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-6 md:mb-0 text-center md:text-left">
                 <span class="font-cinzel text-lg tracking-widest font-semibold block">ALEXANDER IVANOVSKI</span>
-                <p class="text-xs text-zinc-500 mt-1">Based in Germany • All rights reserved</p>
+                <p class="text-xs text-zinc-500 mt-1" data-i18n="footer-rights">Based in Germany • All rights reserved</p>
             </div>
             <div class="flex space-x-6 text-xl text-zinc-400">
                 <a href="mailto:ivanovskialexander@gmail.com" title="Email" class="hover:text-amber-500 transition-colors"><i class="fa-solid fa-envelope"></i></a>
@@ -252,9 +272,9 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPT: CYCLING HERO & ARCHIVE POPUP -->
+    <!-- SCRIPT: TRANSLATIONS, SWIPEABLE ROWS, DYNAMIC ARRAYS -->
     <script>
-        // Array containing all image filenames uploaded to GitHub so far
+        // Array containing regular paintings
         const allPaintings = [
             "IMG_5118.jpeg", "IMG_5183.jpeg", "IMG_5184.jpeg",
             "IMG_7315.jpeg", "IMG_7317.jpeg", "IMG_7319.jpeg", "IMG_7321.jpeg",
@@ -268,14 +288,369 @@
             "IMG_7354.jpeg", "IMG_7355.jpeg"
         ];
 
-        // 1. Cycle Hero Background Randomly Every 5 Seconds
-        const heroBg = document.getElementById('hero-bg');
-        setInterval(() => {
-            const randomImage = allPaintings[Math.floor(Math.random() * allPaintings.length)];
-            heroBg.style.backgroundImage = `url('${randomImage}')`;
-        }, 5000);
+        // Array containing Toy Stories series images (No duplicates from main paintings)
+        const toyStoriesImages = [
+            "IMG_7361.jpeg", "IMG_7362.jpeg", "IMG_7363.jpeg", "IMG_7364.jpeg",
+            "IMG_7365.jpeg", "IMG_7366.jpeg", "IMG_7367.jpeg", "IMG_7368.jpeg",
+            "IMG_7369.jpeg", "IMG_7370.jpeg", "IMG_7371.jpeg", "IMG_7372.jpeg",
+            "IMG_7373.jpeg", "IMG_7374.jpeg", "IMG_7375.jpeg", "IMG_7376.jpeg",
+            "IMG_7377.jpeg", "IMG_7378.jpeg", "IMG_7379.jpeg", "IMG_7380.jpeg"
+        ];
 
-        // 2. Populate Full Archive Modal Grid Automatically
+        // Localization Dictionary
+        const translations = {
+            en: {
+                "meta-title": "Alexander Ivanovski | Fine Art & Painting",
+                "nav-paintings": "Paintings",
+                "nav-toy-stories": "Toy Stories",
+                "nav-classes": "Art Classes",
+                "nav-press": "Press & Awards",
+                "get-in-touch": "Get in Touch",
+                "hero-subtitle": "Painter & Artist",
+                "hero-title": "Art as a Frame",
+                "hero-desc": "Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.",
+                "hero-btn-explore": "Explore Paintings",
+                "hero-btn-archive": "View Full Archive",
+                "gallery-tag": "Visual Archive",
+                "gallery-title": "Featured Paintings",
+                "gallery-view-all": "View All Paintings in Archive",
+                "swipe-note": "Swipe horizontally to view more artwork",
+                "toystories-tag": "New Series",
+                "toystories-desc": "Explore the latest collection series featuring unique narrative compositions.",
+                "classes-tag": "Mentorship & Masterclasses",
+                "classes-title": "Learn Classical & Narrative Painting",
+                "classes-desc": "Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.",
+                "classes-li-1": "Composition & Framing Techniques",
+                "classes-li-2": "Oil & Acrylic Training for Kids & Adults",
+                "classes-li-3": "Individual Portfolio Development",
+                "classes-btn": "Book a Class Session",
+                "classes-overview-title": "Class Overview",
+                "class-1-title": "Youth Art Atelier (Kids)",
+                "class-1-badge": "Weekly Group",
+                "class-1-desc": "Encouraging spatial imagination and drawing fundamentals through engaging projects.",
+                "class-2-title": "Masterclass (Advanced)",
+                "class-2-badge": "By Arrangement",
+                "class-2-desc": "Deep dive into figurative accuracy, dramatic setups, and layered storytelling.",
+                "press-tag": "Recognition",
+                "press-title": "Press & Awards",
+                "read-article": "Read Article",
+                "view-publication": "View Publication",
+                "watch-video": "Watch Video",
+                "read-post": "Read Post",
+                "view-archive": "View Archive",
+                "view-pdf": "View PDF",
+                "view-flyer": "View Flyer",
+                "modal-tag": "Complete Collection",
+                "modal-title": "Full Painting Archive",
+                "modal-close": "Close Archive",
+                "footer-rights": "Based in Germany • All rights reserved"
+            },
+            de: {
+                "meta-title": "Alexander Ivanovski | Bildende Kunst & Malerei",
+                "nav-paintings": "Gemälde",
+                "nav-toy-stories": "Toy Stories",
+                "nav-classes": "Malkurse",
+                "nav-press": "Presse & Auszeichnungen",
+                "get-in-touch": "Kontaktieren",
+                "hero-subtitle": "Maler & Künstler",
+                "hero-title": "Kunst als Rahmen",
+                "hero-desc": "Erforschung menschlicher Beziehungen, psychologischer Dramen und klassischer Beleuchtung, inspiriert vom europäischen Kino und alten Meistern.",
+                "hero-btn-explore": "Gemälde Erkunden",
+                "hero-btn-archive": "Vollständiges Archiv",
+                "gallery-tag": "Visuelles Archiv",
+                "gallery-title": "Ausgewählte Gemälde",
+                "gallery-view-all": "Alle Gemälde im Archiv ansehen",
+                "swipe-note": "Horizontal wischen, um mehr Kunstwerke zu sehen",
+                "toystories-tag": "Neue Serie",
+                "toystories-desc": "Entdecken Sie die neueste Kollektion mit einzigartigen narrativen Kompositionen.",
+                "classes-tag": "Mentoring & Meisterklassen",
+                "classes-title": "Klassische & Narrative Malerei Lernen",
+                "classes-desc": "Strukturierte Privatstunden und Ateliers für angehende Künstler jeden Alters—mit Fokus auf visuelle Erzählung, Grundform und Licht.",
+                "classes-li-1": "Kompositions- & Rahmungstechniken",
+                "classes-li-2": "Öl- & Acryl-Training für Kinder & Erwachsene",
+                "classes-li-3": "Individuelle Portfolio-Entwicklung",
+                "classes-btn": "Kursstunde Buchen",
+                "classes-overview-title": "Kursübersicht",
+                "class-1-title": "Jugend-Malatelier (Kinder)",
+                "class-1-badge": "Wöchentliche Gruppe",
+                "class-1-desc": "Förderung der räumlichen Vorstellungskraft und Zeichengrundlagen durch spannende Projekte.",
+                "class-2-title": "Meisterklasse (Fortgeschrittene)",
+                "class-2-badge": "Nach Vereinbarung",
+                "class-2-desc": "Vertiefung in figurative Genauigkeit, dramatische Setups und vielschichtiges Storytelling.",
+                "press-tag": "Anerkennung",
+                "press-title": "Presse & Auszeichnungen",
+                "read-article": "Artikel Lesen",
+                "view-publication": "Publikation Ansehen",
+                "watch-video": "Video Ansehen",
+                "read-post": "Beitrag Lesen",
+                "view-archive": "Archiv Ansehen",
+                "view-pdf": "PDF Ansehen",
+                "view-flyer": "Flyer Ansehen",
+                "modal-tag": "Vollständige Sammlung",
+                "modal-title": "Vollständiges Gemäldearchiv",
+                "modal-close": "Archiv Schließen",
+                "footer-rights": "Mit Sitz in Deutschland • Alle Rechte vorbehalten"
+            },
+            es: {
+                "meta-title": "Alexander Ivanovski | Bellas Artes y Pintura",
+                "nav-paintings": "Pinturas",
+                "nav-toy-stories": "Toy Stories",
+                "nav-classes": "Clases de Arte",
+                "nav-press": "Prensa y Premios",
+                "get-in-touch": "Contacto",
+                "hero-subtitle": "Pintor y Artista",
+                "hero-title": "El Arte como Marco",
+                "hero-desc": "Explorando relaciones humanas, drama psicológico e iluminación clásica inspirada en el cine europeo y los viejos maestros.",
+                "hero-btn-explore": "Explorar Pinturas",
+                "hero-btn-archive": "Ver Archivo Completo",
+                "gallery-tag": "Archivo Visual",
+                "gallery-title": "Pinturas Destacadas",
+                "gallery-view-all": "Ver Todas las Pinturas en el Archivo",
+                "swipe-note": "Desliza horizontalmente para ver más obras",
+                "toystories-tag": "Nueva Serie",
+                "toystories-desc": "Explore la última colección con composiciones narrativas únicas.",
+                "classes-tag": "Mentoría y Clases Magistrales",
+                "classes-title": "Aprende Pintura Clásica y Narrativa",
+                "classes-desc": "Sesiones privadas estructuradas y talleres para artistas de todas las edades—centrados en la narrativa visual, forma y luz.",
+                "classes-li-1": "Técnicas de Composición y Encuadre",
+                "classes-li-2": "Entrenamiento en Óleo y Acrílico para Niños y Adultos",
+                "classes-li-3": "Desarrollo de Portafolio Individual",
+                "classes-btn": "Reservar una Clase",
+                "classes-overview-title": "Resumen de Clases",
+                "class-1-title": "Atelier de Arte Juvenil (Niños)",
+                "class-1-badge": "Grupo Semanal",
+                "class-1-desc": "Fomentando la imaginación espacial y fundamentos de dibujo a través de proyectos atractivos.",
+                "class-2-title": "Clase Magistral (Avanzado)",
+                "class-2-badge": "Por Acuerdo",
+                "class-2-desc": "Inmersión profunda en precisión figurativa, montajes dramáticos y narración en capas.",
+                "press-tag": "Reconocimiento",
+                "press-title": "Prensa y Premios",
+                "read-article": "Leer Artículo",
+                "view-publication": "Ver Publicación",
+                "watch-video": "Ver Video",
+                "read-post": "Leer Publicación",
+                "view-archive": "Ver Archivo",
+                "view-pdf": "Ver PDF",
+                "view-flyer": "Ver Folleto",
+                "modal-tag": "Colección Completa",
+                "modal-title": "Archivo Completo de Pinturas",
+                "modal-close": "Cerrar Archivo",
+                "footer-rights": "Basado en Alemania • Todos los derechos reservados"
+            },
+            it: {
+                "meta-title": "Alexander Ivanovski | Belle Arti e Pittura",
+                "nav-paintings": "Dipinti",
+                "nav-toy-stories": "Toy Stories",
+                "nav-classes": "Corsi d'Arte",
+                "nav-press": "Stampa e Premi",
+                "get-in-touch": "Contattaci",
+                "hero-subtitle": "Pittore e Artista",
+                "hero-title": "L'Arte come Cornice",
+                "hero-desc": "Esplorando relazioni umane, dramma psicologico e illuminazione classica ispirata al cinema europeo e ai grandi maestri.",
+                "hero-btn-explore": "Esplora i Dipinti",
+                "hero-btn-archive": "Visualizza Archivio Completo",
+                "gallery-tag": "Archivio Visivo",
+                "gallery-title": "Dipinti in Evidenza",
+                "gallery-view-all": "Visualizza Tutti i Dipinti nell'Archivio",
+                "swipe-note": "Scorri orizzontalmente per vedere più opere",
+                "toystories-tag": "Nuova Serie",
+                "toystories-desc": "Esplora l'ultima collezione con composizioni narrative uniche.",
+                "classes-tag": "Mentorship e Masterclass",
+                "classes-title": "Impara la Pittura Classica e Narrativa",
+                "classes-desc": "Sessioni private strutturate e atelier disponibili per artisti di tutte le età—incentrati sulla narrazione visiva, forma e luce.",
+                "classes-li-1": "Tecniche di Composizione e Inquadratura",
+                "classes-li-2": "Formazione a Olio e Acrilico per Bambini e Adulti",
+                "classes-li-3": "Sviluppo del Portfolio Individuale",
+                "classes-btn": "Prenota una lezione",
+                "classes-overview-title": "Panoramica dei Corsi",
+                "class-1-title": "Atelier d'Arte Giovanile (Bambini)",
+                "class-1-badge": "Gruppo Settimanale",
+                "class-1-desc": "Incoraggiare l'immaginazione spaziale e le basi del disegno attraverso progetti coinvolgenti.",
+                "class-2-title": "Masterclass (Avanzato)",
+                "class-2-badge": "Su Appuntamento",
+                "class-2-desc": "Tuffo profondo nell'accuratezza figurativa, scenografie drammatiche e narrazione stratificata.",
+                "press-tag": "Riconoscimenti",
+                "press-title": "Stampa e Premi",
+                "read-article": "Leggi Articolo",
+                "view-publication": "Visualizza Pubblicazione",
+                "watch-video": "Guarda Video",
+                "read-post": "Leggi Post",
+                "view-archive": "Visualizza Archivio",
+                "view-pdf": "Visualizza PDF",
+                "view-flyer": "Visualizza Volantino",
+                "modal-tag": "Collezione Completa",
+                "modal-title": "Archivio Completo dei Dipinti",
+                "modal-close": "Chiudi Archivio",
+                "footer-rights": "Basato in Germania • Tutti i diritti riservati"
+            },
+            zh: {
+                "meta-title": "Alexander Ivanovski | 美术与绘画",
+                "nav-paintings": "画作",
+                "nav-toy-stories": "玩具故事",
+                "nav-classes": "艺术课程",
+                "nav-press": "媒体与奖项",
+                "get-in-touch": "联系我们",
+                "hero-subtitle": "画家与艺术家",
+                "hero-title": "艺术作为画框",
+                "hero-desc": "探索受欧洲电影和古典大师启发的人际关系、心理戏剧与古典光影。",
+                "hero-btn-explore": "探索画作",
+                "hero-btn-archive": "查看完整档案",
+                "gallery-tag": "视觉档案",
+                "gallery-title": "精选画作",
+                "gallery-view-all": "查看档案中的所有画作",
+                "swipe-note": "向左或向右滑动以查看更多艺术品",
+                "toystories-tag": "全新系列",
+                "toystories-desc": "探索融合独特叙事构图的最新收藏系列。",
+                "classes-tag": "导师辅导与大师班",
+                "classes-title": "学习古典与叙事绘画",
+                "classes-desc": "为各年龄段有志艺术家提供结构化的私教与工作室辅导——专注于视觉叙事、基础造型与光影。",
+                "classes-li-1": "构图与取景技巧",
+                "classes-li-2": "儿童与成人油画、丙烯培训",
+                "classes-li-3": "个人作品集发展指导",
+                "classes-btn": "预约课程",
+    "classes-overview-title": "课程概览",
+                "class-1-title": "青少年艺术工作室（儿童）",
+                "class-1-badge": "每周小组",
+                "class-1-desc": "通过引人入胜的项目培养空间想象力与素描基础。",
+                "class-2-title": "大师班（高级）",
+                "class-2-badge": "另行安排",
+                "class-2-desc": "深入探讨具象精准度、戏剧性布景和多层叙事。",
+                "press-tag": "荣誉认可",
+                "press-title": "媒体与奖项",
+                "read-article": "阅读文章",
+                "view-publication": "查看出版物",
+                "watch-video": "观看视频",
+                "read-post": "阅读文章",
+                "view-archive": "查看档案",
+                "view-pdf": "查看PDF",
+                "view-flyer": "查看传单",
+                "modal-tag": "完整系列",
+                "modal-title": "完整画作档案",
+                "modal-close": "关闭档案",
+                "footer-rights": "总部位于德国 • 版权所有"
+            },
+            ru: {
+                "meta-title": "Alexander Ivanovski | Изобразительное искусство и живопись",
+                "nav-paintings": "Картины",
+                "nav-toy-stories": "Toy Stories",
+                "nav-classes": "Уроки рисования",
+                "nav-press": "Пресса и награды",
+                "get-in-touch": "Связаться",
+                "hero-subtitle": "Художник",
+                "hero-title": "Искусство как рамка",
+                "hero-desc": "Исследование человеческих отношений, психологической драмы и классического освещения, вдохновленное европейским кино и старыми мастерами.",
+                "hero-btn-explore": "Исследовать картины",
+                "hero-btn-archive": "Полный архив",
+                "gallery-tag": "Визуальный архив",
+                "gallery-title": "Избранные картины",
+                "gallery-view-all": "Посмотреть все картины в архиве",
+                "swipe-note": "Проведите пальцем горизонтально, чтобы увидеть больше работ",
+                "toystories-tag": "Новая серия",
+                "toystories-desc": "Изучите последнюю коллекцию с уникальными сюжетными композициями.",
+                "classes-tag": "Наставничество и мастер-классы",
+                "classes-title": "Изучение классической и сюжетной живописи",
+                "classes-desc": "Структурированные частные занятия и мастерские для начинающих художников всех возрастов с акцентом на визуальное повествование и свет.",
+                "classes-li-1": "Техники композиции и кадрирования",
+                "classes-li-2": "Обучение масляной и акриловой живописи",
+                "classes-li-3": "Индивидуальное развитие портфолио",
+                "classes-btn": "Записаться на урок",
+                "classes-overview-title": "Обзор занятий",
+                "class-1-title": "Молодежная арт-студия (дети)",
+                "class-1-badge": "Еженедельная группа",
+                "class-1-desc": "Развитие пространственного воображения и основ рисунка через увлекательные проекты.",
+                "class-2-title": "Мастер-класс (продвинутый)",
+                "class-2-badge": "По договоренности",
+                "class-2-desc": "Погружение в фигурную точность, драматические постановки и многослойный нарратив.",
+                "press-tag": "Признание",
+                "press-title": "Пресса и награды",
+                "read-article": "Читать статью",
+                "view-publication": "Посмотреть публикацию",
+                "watch-video": "Смотреть видео",
+                "read-post": "Читать пост",
+                "view-archive": "Посмотреть архив",
+                "view-pdf": "Посмотреть PDF",
+                "view-flyer": "Посмотреть флаер",
+                "modal-tag": "Полная коллекция",
+                "modal-title": "Полный архив картин",
+                "modal-close": "Закрыть архив",
+                "footer-rights": "Базируется в Германии • Все права защищены"
+            }
+        };
+
+        // Automatic Language Detection (Browser language setting or location check fallback)
+        function detectUserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang) {
+                const shortLang = browserLang.substring(0, 2).toLowerCase();
+                if (translations[shortLang]) {
+                    return shortLang;
+                }
+            }
+            return 'en'; // default fallback
+        }
+
+        let currentLang = detectUserLanguage();
+
+        function applyLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('lang-selector').value = lang;
+            
+            // Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else {
+                        el.innerText = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function changeLanguage(lang) {
+            applyLanguage(lang);
+        }
+
+        // Initialize Language on Load
+        applyLanguage(currentLang);
+
+        // Populate Swipeable Gallery Row (Paintings)
+        const swipeableGrid = document.getElementById('swipeable-grid');
+        let swipeHTML = '';
+        allPaintings.forEach((img, index) => {
+            swipeHTML += `
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openArchiveModal()">
+                    <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                        <img src="${img}" alt="Painting ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                            <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Archive Piece</span>
+                            <h3 class="font-cinzel text-lg font-medium text-white mt-1">View in Full Gallery</h3>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        swipeableGrid.innerHTML = swipeHTML;
+
+        // Populate Swipeable Row for Toy Stories (Using screenshot file names exclusively, no duplicates)
+        const toyStoriesGrid = document.getElementById('toystories-grid');
+        let toyHTML = '';
+        toyStoriesImages.forEach((img, index) => {
+            toyHTML += `
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer">
+                    <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                        <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-amber-400 text-xs font-mono">Toy Stories #${index + 1}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        toyStoriesGrid.innerHTML = toyHTML;
+
+        // Populate Full Archive Modal Grid Automatically
         const modalGrid = document.getElementById('modal-image-grid');
         let archiveHTML = '';
         allPaintings.forEach((img, index) => {
@@ -290,7 +665,14 @@
         });
         modalGrid.innerHTML = archiveHTML;
 
-        // 3. Modal Controls
+        // Cycle Hero Background Randomly Every 5 Seconds
+        const heroBg = document.getElementById('hero-bg');
+        setInterval(() => {
+            const randomImage = allPaintings[Math.floor(Math.random() * allPaintings.length)];
+            heroBg.style.backgroundImage = `url('${randomImage}')`;
+        }, 5000);
+
+        // Modal Controls
         function openArchiveModal() {
             document.getElementById('archive-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
