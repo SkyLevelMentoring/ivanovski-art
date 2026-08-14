@@ -96,10 +96,15 @@
     <!-- NEW SECTION: TOY STORIES -->
     <section id="toy-stories" class="py-24 bg-zinc-900/30 border-t border-zinc-900">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
-            <div class="mb-12">
-                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-tag">New Series</span>
-                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Toy Stories</h2>
-                <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="toystories-desc">Explore the latest collection series featuring unique narrative compositions.</p>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-tag">New Series</span>
+                    <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Toy Stories</h2>
+                    <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="toystories-desc">Explore the latest collection series featuring unique narrative compositions.</p>
+                </div>
+                <button onclick="openToyStoriesModal()" class="mt-4 md:mt-0 text-sm text-amber-500 hover:text-amber-400 font-medium inline-flex items-center cursor-pointer">
+                    <span data-i18n="toystories-view-all">View all Paintings in Toy Stories Collection</span> <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
             </div>
 
             <!-- Swipe Note for Toy Stories -->
@@ -257,6 +262,25 @@
         </div>
     </div>
 
+    <!-- TOY STORIES COLLECTION MODAL -->
+    <div id="toy-stories-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-8 md:mb-12 border-b border-zinc-800 pb-6">
+                <div>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-modal-tag">Toy Stories Collection</span>
+                    <h2 class="font-cinzel text-2xl md:text-4xl font-bold mt-1" data-i18n="toystories-modal-title">Toy Stories Archive</h2>
+                </div>
+                <button onclick="closeToyStoriesModal()" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer border border-zinc-800">
+                    <i class="fa-solid fa-xmark mr-2"></i> <span data-i18n="modal-close">Close Archive</span>
+                </button>
+            </div>
+            <!-- Auto-generated grid containing Toy Stories images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="modal-toystories-grid">
+                <!-- Dynamically populated via script -->
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER / CONTACT -->
     <footer class="bg-zinc-950 border-t border-zinc-900 py-16">
         <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
@@ -317,6 +341,9 @@
                 "swipe-note": "Swipe horizontally to view more artwork",
                 "toystories-tag": "New Series",
                 "toystories-desc": "Explore the latest collection series featuring unique narrative compositions.",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "Toy Stories Collection",
+                "toystories-modal-title": "Toy Stories Archive",
                 "classes-tag": "Mentorship & Masterclasses",
                 "classes-title": "Learn Classical & Narrative Painting",
                 "classes-desc": "Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.",
@@ -363,6 +390,9 @@
                 "swipe-note": "Horizontal wischen, um mehr Kunstwerke zu sehen",
                 "toystories-tag": "Neue Serie",
                 "toystories-desc": "Entdecken Sie die neueste Kollektion mit einzigartigen narrativen Kompositionen.",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "Toy Stories Kollektion",
+                "toystories-modal-title": "Toy Stories Archiv",
                 "classes-tag": "Mentoring & Meisterklassen",
                 "classes-title": "Klassische & Narrative Malerei Lernen",
                 "classes-desc": "Strukturierte Privatstunden und Ateliers für angehende Künstler jeden Alters—mit Fokus auf visuelle Erzählung, Grundform und Licht.",
@@ -409,6 +439,9 @@
                 "swipe-note": "Desliza horizontalmente para ver más obras",
                 "toystories-tag": "Nueva Serie",
                 "toystories-desc": "Explore la última colección con composiciones narrativas únicas.",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "Colección Toy Stories",
+                "toystories-modal-title": "Archivo Toy Stories",
                 "classes-tag": "Mentoría y Clases Magistrales",
                 "classes-title": "Aprende Pintura Clásica y Narrativa",
                 "classes-desc": "Sesiones privadas estructuradas y talleres para artistas de todas las edades—centrados en la narrativa visual, forma y luz.",
@@ -455,6 +488,9 @@
                 "swipe-note": "Scorri orizzontalmente per vedere più opere",
                 "toystories-tag": "Nuova Serie",
                 "toystories-desc": "Esplora l'ultima collezione con composizioni narrative uniche.",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "Collezione Toy Stories",
+                "toystories-modal-title": "Archivio Toy Stories",
                 "classes-tag": "Mentorship e Masterclass",
                 "classes-title": "Impara la Pittura Classica e Narrativa",
                 "classes-desc": "Sessioni private strutturate e atelier disponibili per artisti di tutte le età—incentrati sulla narrazione visiva, forma e luce.",
@@ -501,6 +537,9 @@
                 "swipe-note": "向左或向右滑动以查看更多艺术品",
                 "toystories-tag": "全新系列",
                 "toystories-desc": "探索融合独特叙事构图的最新收藏系列。",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "玩具故事系列",
+                "toystories-modal-title": "玩具故事档案",
                 "classes-tag": "导师辅导与大师班",
                 "classes-title": "学习古典与叙事绘画",
                 "classes-desc": "为各年龄段有志艺术家提供结构化的私教与工作室辅导——专注于视觉叙事、基础造型与光影。",
@@ -508,7 +547,7 @@
                 "classes-li-2": "儿童与成人油画、丙烯培训",
                 "classes-li-3": "个人作品集发展指导",
                 "classes-btn": "预约课程",
-    "classes-overview-title": "课程概览",
+                "classes-overview-title": "课程概览",
                 "class-1-title": "青少年艺术工作室（儿童）",
                 "class-1-badge": "每周小组",
                 "class-1-desc": "通过引人入胜的项目培养空间想象力与素描基础。",
@@ -547,6 +586,9 @@
                 "swipe-note": "Проведите пальцем горизонтально, чтобы увидеть больше работ",
                 "toystories-tag": "Новая серия",
                 "toystories-desc": "Изучите последнюю коллекцию с уникальными сюжетными композициями.",
+                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-modal-tag": "Коллекция Toy Stories",
+                "toystories-modal-title": "Архив Toy Stories",
                 "classes-tag": "Наставничество и мастер-классы",
                 "classes-title": "Изучение классической и сюжетной живописи",
                 "classes-desc": "Структурированные частные занятия и мастерские для начинающих художников всех возрастов с акцентом на визуальное повествование и свет.",
@@ -638,7 +680,7 @@
         let toyHTML = '';
         toyStoriesImages.forEach((img, index) => {
             toyHTML += `
-                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer">
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openToyStoriesModal()">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
@@ -665,6 +707,21 @@
         });
         modalGrid.innerHTML = archiveHTML;
 
+        // Populate Toy Stories Modal Grid Automatically
+        const toyModalGrid = document.getElementById('modal-toystories-grid');
+        let toyModalHTML = '';
+        toyStoriesImages.forEach((img, index) => {
+            toyModalHTML += `
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                    <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-amber-400 text-xs font-mono">Toy Stories #${index + 1}</span>
+                    </div>
+                </div>
+            `;
+        });
+        toyModalGrid.innerHTML = toyModalHTML;
+
         // Cycle Hero Background Randomly Every 5 Seconds
         const heroBg = document.getElementById('hero-bg');
         setInterval(() => {
@@ -680,6 +737,16 @@
 
         function closeArchiveModal() {
             document.getElementById('archive-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openToyStoriesModal() {
+            document.getElementById('toy-stories-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeToyStoriesModal() {
+            document.getElementById('toy-stories-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
