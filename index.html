@@ -30,6 +30,7 @@
             <nav class="hidden lg:flex items-center space-x-6 text-xs md:text-sm tracking-wider uppercase">
                 <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
                 <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
+                <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
                 <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Art Classes</a>
                 <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
             </nav>
@@ -50,6 +51,7 @@
         <div class="lg:hidden flex items-center justify-around bg-zinc-900/90 border-t border-zinc-800/80 px-2 py-2 text-xs uppercase tracking-wider">
             <a href="#gallery" class="hover:text-amber-500" data-i18n="nav-paintings">Paintings</a>
             <a href="#toy-stories" class="hover:text-amber-500" data-i18n="nav-toy-stories">Toy Stories</a>
+            <a href="#portraits" class="hover:text-amber-500" data-i18n="nav-portraits">Portraits</a>
             <a href="#classes" class="hover:text-amber-500" data-i18n="nav-classes">Classes</a>
             <a href="#press" class="hover:text-amber-500" data-i18n="nav-press">Press</a>
         </div>
@@ -93,7 +95,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: TOY STORIES -->
+    <!-- TOY STORIES SECTION -->
     <section id="toy-stories" class="py-24 bg-zinc-900/30 border-t border-zinc-900">
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
@@ -114,6 +116,32 @@
 
             <!-- Swipeable Row for Toy Stories -->
             <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-6 snap-x snap-mandatory" id="toystories-grid">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTRAITS SECTION -->
+    <section id="portraits" class="py-24 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+                <div>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="portraits-tag">Character Studies</span>
+                    <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2" data-i18n="portraits-title">Portraits</h2>
+                    <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="portraits-desc">Explore the portraits collection featuring intimate character studies and expressive framing.</p>
+                </div>
+                <button onclick="openPortraitsModal()" class="mt-4 md:mt-0 text-sm text-amber-500 hover:text-amber-400 font-medium inline-flex items-center cursor-pointer">
+                    <span data-i18n="portraits-view-all">View all Portraits</span> <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+
+            <!-- Swipe Note for Portraits -->
+            <div class="flex items-center text-xs text-amber-400/80 mb-4 font-mono tracking-wide">
+                <i class="fa-solid fa-arrows-left-right mr-2 animate-pulse"></i> <span data-i18n="swipe-note">Swipe horizontally to view more artwork</span>
+            </div>
+
+            <!-- Swipeable Row for Portraits -->
+            <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-6 snap-x snap-mandatory" id="portraits-grid">
                 <!-- Populated dynamically via JS -->
             </div>
         </div>
@@ -281,6 +309,25 @@
         </div>
     </div>
 
+    <!-- PORTRAITS COLLECTION MODAL -->
+    <div id="portraits-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-8 md:mb-12 border-b border-zinc-800 pb-6">
+                <div>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="portraits-modal-tag">Portraits Collection</span>
+                    <h2 class="font-cinzel text-2xl md:text-4xl font-bold mt-1" data-i18n="portraits-modal-title">Portraits Archive</h2>
+                </div>
+                <button onclick="closePortraitsModal()" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer border border-zinc-800">
+                    <i class="fa-solid fa-xmark mr-2"></i> <span data-i18n="modal-close">Close Archive</span>
+                </button>
+            </div>
+            <!-- Auto-generated grid containing Portraits images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="modal-portraits-grid">
+                <!-- Dynamically populated via script -->
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER / CONTACT -->
     <footer class="bg-zinc-950 border-t border-zinc-900 py-16">
         <div class="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center">
@@ -312,7 +359,7 @@
             "IMG_7354.jpeg", "IMG_7355.jpeg"
         ];
 
-        // Array containing Toy Stories series images (No duplicates from main paintings)
+        // Array containing Toy Stories series images
         const toyStoriesImages = [
             "IMG_7361.jpeg", "IMG_7362.jpeg", "IMG_7363.jpeg", "IMG_7364.jpeg",
             "IMG_7365.jpeg", "IMG_7366.jpeg", "IMG_7367.jpeg", "IMG_7368.jpeg",
@@ -321,12 +368,33 @@
             "IMG_7377.jpeg", "IMG_7378.jpeg", "IMG_7379.jpeg", "IMG_7380.jpeg"
         ];
 
+        // Array containing Portraits images
+        const portraitsImages = [
+            "IMG_7383.jpeg", "IMG_7384.jpeg", "IMG_7385.jpeg", "IMG_7386.jpeg",
+            "IMG_7387.jpeg", "IMG_7388.jpeg", "IMG_7389.jpeg", "IMG_7390.jpeg",
+            "IMG_7391.jpeg", "IMG_7392.jpeg", "IMG_7393.jpeg", "IMG_7394.jpeg",
+            "IMG_7395.jpeg", "IMG_7396.jpeg", "IMG_7397.jpeg", "IMG_7398.jpeg",
+            "IMG_7399.jpeg", "IMG_7400.jpeg", "IMG_7401.jpeg", "IMG_7402.jpeg",
+            "IMG_7403.jpeg", "IMG_7404.jpeg", "IMG_7405.jpeg", "IMG_7406.jpeg",
+            "IMG_7407.jpeg", "IMG_7408.jpeg", "IMG_7409.jpeg", "IMG_7410.jpeg",
+            "IMG_7411.jpeg", "IMG_7412.jpeg", "IMG_7413.jpeg", "IMG_7414.jpeg",
+            "IMG_7415.jpeg", "IMG_7416.jpeg", "IMG_7417.jpeg", "IMG_7418.jpeg",
+            "IMG_7419.jpeg", "IMG_7420.jpeg", "IMG_7450.jpeg", "IMG_7460.jpeg",
+            "IMG_7487.jpeg", "IMG_7490.jpeg", "IMG_7502.jpeg", "IMG_7503.jpeg",
+            "IMG_7504.jpeg", "IMG_7505.jpeg", "IMG_7506.jpeg", "IMG_7507.jpeg",
+            "IMG_7508.jpeg", "IMG_7509.jpeg", "IMG_7510.jpeg", "IMG_7511.jpeg",
+            "IMG_7512.jpeg", "IMG_7514.jpeg", "IMG_7515.jpeg", "IMG_7516.jpeg",
+            "IMG_7517.jpeg", "IMG_7518.jpeg", "IMG_7521.jpeg", "IMG_7522.jpeg",
+            "IMG_7523.jpeg", "IMG_7524.jpeg"
+        ];
+
         // Localization Dictionary
         const translations = {
             en: {
                 "meta-title": "Alexander Ivanovski | Fine Art & Painting",
                 "nav-paintings": "Paintings",
                 "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Portraits",
                 "nav-classes": "Art Classes",
                 "nav-press": "Press & Awards",
                 "get-in-touch": "Get in Touch",
@@ -344,6 +412,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Toy Stories Collection",
                 "toystories-modal-title": "Toy Stories Archive",
+                "portraits-tag": "Character Studies",
+                "portraits-title": "Portraits",
+                "portraits-desc": "Explore the portraits collection featuring intimate character studies and expressive framing.",
+                "portraits-view-all": "View all Portraits",
+                "portraits-modal-tag": "Portraits Collection",
+                "portraits-modal-title": "Portraits Archive",
                 "classes-tag": "Mentorship & Masterclasses",
                 "classes-title": "Learn Classical & Narrative Painting",
                 "classes-desc": "Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.",
@@ -376,6 +450,7 @@
                 "meta-title": "Alexander Ivanovski | Bildende Kunst & Malerei",
                 "nav-paintings": "Gemälde",
                 "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Porträts",
                 "nav-classes": "Malkurse",
                 "nav-press": "Presse & Auszeichnungen",
                 "get-in-touch": "Kontaktieren",
@@ -393,6 +468,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Toy Stories Kollektion",
                 "toystories-modal-title": "Toy Stories Archiv",
+                "portraits-tag": "Charakterstudien",
+                "portraits-title": "Porträts",
+                "portraits-desc": "Entdecken Sie die Porträts-Kollektion mit intimen Charakterstudien und expressiver Rahmung.",
+                "portraits-view-all": "Alle Porträts anzeigen",
+                "portraits-modal-tag": "Porträts Kollektion",
+                "portraits-modal-title": "Porträts Archiv",
                 "classes-tag": "Mentoring & Meisterklassen",
                 "classes-title": "Klassische & Narrative Malerei Lernen",
                 "classes-desc": "Strukturierte Privatstunden und Ateliers für angehende Künstler jeden Alters—mit Fokus auf visuelle Erzählung, Grundform und Licht.",
@@ -425,6 +506,7 @@
                 "meta-title": "Alexander Ivanovski | Bellas Artes y Pintura",
                 "nav-paintings": "Pinturas",
                 "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Retratos",
                 "nav-classes": "Clases de Arte",
                 "nav-press": "Prensa y Premios",
                 "get-in-touch": "Contacto",
@@ -442,6 +524,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Colección Toy Stories",
                 "toystories-modal-title": "Archivo Toy Stories",
+                "portraits-tag": "Estudios de Personajes",
+                "portraits-title": "Retratos",
+                "portraits-desc": "Explore la colección de retratos con estudios de personajes íntimos y encuadres expresivos.",
+                "portraits-view-all": "Ver todos los retratos",
+                "portraits-modal-tag": "Colección de Retratos",
+                "portraits-modal-title": "Archivo de Retratos",
                 "classes-tag": "Mentoría y Clases Magistrales",
                 "classes-title": "Aprende Pintura Clásica y Narrativa",
                 "classes-desc": "Sesiones privadas estructuradas y talleres para artistas de todas las edades—centrados en la narrativa visual, forma y luz.",
@@ -474,6 +562,7 @@
                 "meta-title": "Alexander Ivanovski | Belle Arti e Pittura",
                 "nav-paintings": "Dipinti",
                 "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Ritratti",
                 "nav-classes": "Corsi d'Arte",
                 "nav-press": "Stampa e Premi",
                 "get-in-touch": "Contattaci",
@@ -491,6 +580,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Collezione Toy Stories",
                 "toystories-modal-title": "Archivio Toy Stories",
+                "portraits-tag": "Studi di Personaggi",
+                "portraits-title": "Ritratti",
+                "portraits-desc": "Esplora la collezione di ritratti con studi di personaggi intimi e inquadrature espressive.",
+                "portraits-view-all": "Visualizza tutti i ritratti",
+                "portraits-modal-tag": "Collezione Ritratti",
+                "portraits-modal-title": "Archivio Ritratti",
                 "classes-tag": "Mentorship e Masterclass",
                 "classes-title": "Impara la Pittura Classica e Narrativa",
                 "classes-desc": "Sessioni private strutturate e atelier disponibili per artisti di tutte le età—incentrati sulla narrazione visiva, forma e luce.",
@@ -523,6 +618,7 @@
                 "meta-title": "Alexander Ivanovski | 美术与绘画",
                 "nav-paintings": "画作",
                 "nav-toy-stories": "玩具故事",
+                "nav-portraits": "肖像",
                 "nav-classes": "艺术课程",
                 "nav-press": "媒体与奖项",
                 "get-in-touch": "联系我们",
@@ -540,6 +636,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "玩具故事系列",
                 "toystories-modal-title": "玩具故事档案",
+                "portraits-tag": "人物写生",
+                "portraits-title": "肖像",
+                "portraits-desc": "探索包含亲密人物研究与表现力构图的肖像系列。",
+                "portraits-view-all": "查看所有肖像",
+                "portraits-modal-tag": "肖像系列",
+                "portraits-modal-title": "肖像档案",
                 "classes-tag": "导师辅导与大师班",
                 "classes-title": "学习古典与叙事绘画",
                 "classes-desc": "为各年龄段有志艺术家提供结构化的私教与工作室辅导——专注于视觉叙事、基础造型与光影。",
@@ -572,6 +674,7 @@
                 "meta-title": "Alexander Ivanovski | Изобразительное искусство и живопись",
                 "nav-paintings": "Картины",
                 "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Портреты",
                 "nav-classes": "Уроки рисования",
                 "nav-press": "Пресса и награды",
                 "get-in-touch": "Связаться",
@@ -589,6 +692,12 @@
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Коллекция Toy Stories",
                 "toystories-modal-title": "Архив Toy Stories",
+                "portraits-tag": "Характерные этюды",
+                "portraits-title": "Портреты",
+                "portraits-desc": "Изучите коллекцию портретов, включающую интимные исследования образов и выразительное кадрирование.",
+                "portraits-view-all": "Посмотреть все портреты",
+                "portraits-modal-tag": "Коллекция портретов",
+                "portraits-modal-title": "Архив портретов",
                 "classes-tag": "Наставничество и мастер-классы",
                 "classes-title": "Изучение классической и сюжетной живописи",
                 "classes-desc": "Структурированные частные занятия и мастерские для начинающих художников всех возрастов с акцентом на визуальное повествование и свет.",
@@ -657,6 +766,16 @@
         // Initialize Language on Load
         applyLanguage(currentLang);
 
+        // Helper function to shuffle an array randomly
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
         // Populate Swipeable Gallery Row (Paintings)
         const swipeableGrid = document.getElementById('swipeable-grid');
         let swipeHTML = '';
@@ -675,22 +794,41 @@
         });
         swipeableGrid.innerHTML = swipeHTML;
 
-        // Populate Swipeable Row for Toy Stories (Using screenshot file names exclusively, no duplicates)
+        // Populate Swipeable Row for Toy Stories (Randomized on every page load)
         const toyStoriesGrid = document.getElementById('toystories-grid');
         let toyHTML = '';
-        toyStoriesImages.forEach((img, index) => {
+        const randomizedToyStories = shuffleArray(toyStoriesImages);
+        randomizedToyStories.forEach((img, index) => {
             toyHTML += `
                 <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openToyStoriesModal()">
                     <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
                         <img src="${img}" alt="Toy Stories ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
-                            <span class="text-amber-400 text-xs font-mono">Toy Stories #${index + 1}</span>
+                            <span class="text-amber-400 text-xs font-mono">Toy Stories Series</span>
                         </div>
                     </div>
                 </div>
             `;
         });
         toyStoriesGrid.innerHTML = toyHTML;
+
+        // Populate Swipeable Row for Portraits (Randomized on every page load)
+        const portraitsGrid = document.getElementById('portraits-grid');
+        let portraitsHTML = '';
+        const randomizedPortraits = shuffleArray(portraitsImages);
+        randomizedPortraits.forEach((img, index) => {
+            portraitsHTML += `
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openPortraitsModal()">
+                    <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                        <img src="${img}" alt="Portraits ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-amber-400 text-xs font-mono">Portraits Series</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        portraitsGrid.innerHTML = portraitsHTML;
 
         // Populate Full Archive Modal Grid Automatically
         const modalGrid = document.getElementById('modal-image-grid');
@@ -722,6 +860,21 @@
         });
         toyModalGrid.innerHTML = toyModalHTML;
 
+        // Populate Portraits Modal Grid Automatically
+        const portraitsModalGrid = document.getElementById('modal-portraits-grid');
+        let portraitsModalHTML = '';
+        portraitsImages.forEach((img, index) => {
+            portraitsModalHTML += `
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                    <img src="${img}" alt="Portraits ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-amber-400 text-xs font-mono">Portraits #${index + 1}</span>
+                    </div>
+                </div>
+            `;
+        });
+        portraitsModalGrid.innerHTML = portraitsModalHTML;
+
         // Cycle Hero Background Randomly Every 5 Seconds
         const heroBg = document.getElementById('hero-bg');
         setInterval(() => {
@@ -747,6 +900,16 @@
 
         function closeToyStoriesModal() {
             document.getElementById('toy-stories-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openPortraitsModal() {
+            document.getElementById('portraits-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePortraitsModal() {
+            document.getElementById('portraits-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
