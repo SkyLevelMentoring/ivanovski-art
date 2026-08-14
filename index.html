@@ -24,40 +24,55 @@
 <body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-600 selection:text-white">
 
     <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-cinzel text-sm sm:text-base md:text-xl tracking-widest font-semibold uppercase truncate max-w-[180px] sm:max-w-none">Alexander Ivanovski</a>
-            <nav class="hidden lg:flex items-center space-x-6 text-xs md:text-sm tracking-wider uppercase">
-                <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
-                <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
-                <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
-                <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
-                <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Art Classes</a>
-                <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
-            </nav>
-            <div class="flex items-center space-x-3">
-                <!-- Language Selector Dropdown -->
-                <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs rounded-full px-3 py-2 focus:outline-none focus:border-amber-500 cursor-pointer">
-                    <option value="en">English</option>
-                    <option value="de">Deutsch</option>
-                    <option value="es">Español</option>
-                    <option value="it">Italiano</option>
-                    <option value="zh">中文</option>
-                    <option value="ru">Русский</option>
-                </select>
-                <a href="mailto:ivanovskialexander@gmail.com" class="hidden sm:inline-block text-xs md:text-sm border border-zinc-700 hover:border-amber-500 px-4 py-2 rounded-full transition-all" data-i18n="get-in-touch">Get in Touch</a>
-            </div>
-        </div>
-        <!-- Mobile Sub-nav bar -->
-        <div class="lg:hidden flex items-center justify-around bg-zinc-900/90 border-t border-zinc-800/80 px-2 py-2 text-xs uppercase tracking-wider">
-            <a href="#wild-wild-west" class="hover:text-amber-500" data-i18n="nav-wild-wild-west">Wild West</a>
-            <a href="#gallery" class="hover:text-amber-500" data-i18n="nav-paintings">Paintings</a>
-            <a href="#toy-stories" class="hover:text-amber-500" data-i18n="nav-toy-stories">Toy Stories</a>
-            <a href="#portraits" class="hover:text-amber-500" data-i18n="nav-portraits">Portraits</a>
-            <a href="#classes" class="hover:text-amber-500" data-i18n="nav-classes">Classes</a>
-            <a href="#press" class="hover:text-amber-500" data-i18n="nav-press">Press</a>
-        </div>
-    </header>
+    <!-- HEADER / NAVIGATION -->
+<header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/50">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+    
+    <!-- Top Row: Brand Title & Language Selector -->
+    <div class="flex items-center justify-between w-full md:w-auto gap-2">
+      <a href="#" class="font-cinzel text-xs sm:text-sm md:text-xl tracking-wider sm:tracking-widest font-semibold uppercase text-zinc-100 truncate">
+        ALEXANDER IVANOVSKI
+      </a>
+      
+      <!-- Language Selector Dropdown -->
+      <div class="flex items-center shrink-0">
+        <select id="lang-selector" onchange="changeLanguage(this.value)" class="bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs rounded-full px-2.5 py-1 focus:outline-none focus:border-amber-500">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="zh">中文</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Collections Navigation (Responsive with Vertical Dividers) -->
+    <nav class="w-full overflow-x-auto no-scrollbar py-1 md:py-0">
+      <ul class="flex items-center space-x-0 whitespace-nowrap text-xs md:text-sm uppercase tracking-wider text-zinc-400">
+        <li class="flex items-center pr-3 md:pr-4">
+          <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
+        </li>
+        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+          <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
+        </li>
+        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+          <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
+        </li>
+        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+          <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
+        </li>
+        <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
+          <a href="#classes" class="hover:text-amber-500 transition-colors" data-i18n="nav-classes">Classes</a>
+        </li>
+        <li class="flex items-center pl-3 md:pl-4 border-l border-zinc-700/60">
+          <a href="#press" class="hover:text-amber-500 transition-colors" data-i18n="nav-press">Press & Awards</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
 
     <!-- HERO SECTION WITH CYCLING ARTWORK BACKGROUND -->
     <section id="hero-section" class="relative h-screen flex items-center justify-center bg-zinc-900 overflow-hidden pt-20">
