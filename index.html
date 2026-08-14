@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Ivanovski | Fine Art & Cinematic Painting</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-cinzel text-lg md:text-xl tracking-widest font-semibold uppercase">Alexander Ivanovski</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wider uppercase">
+                <a href="#gallery" class="hover:text-amber-500 transition-colors">Portfolio</a>
+                <a href="#classes" class="hover:text-amber-500 transition-colors">Art Classes</a>
+                <a href="#press" class="hover:text-amber-500 transition-colors">Press & Awards</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="mailto:ivanovskialexander@gmail.com" class="text-sm border border-zinc-700 hover:border-amber-500 px-4 py-2 rounded-full transition-all">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center bg-zinc-900 overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&q=80&w=2000');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent"></div>
+        <div class="relative z-10 text-center max-w-3xl px-6">
+            <span class="text-amber-500 tracking-[0.3em] uppercase text-xs font-semibold block mb-4">Painter & Cinematic Director</span>
+            <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">Art as a Frame</h1>
+            <p class="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-xl mx-auto">Exploring human relationships, psychological drama, and classical lighting inspired by European cinema.</p>
+            <a href="#gallery" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / GALLERY SECTION -->
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Visual Archive</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Selected Works</h2>
+            </div>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 mt-6 md:mt-0 text-sm">
+                <button onclick="filterWorks('all', event)" class="filter-btn px-4 py-2 rounded-full bg-zinc-800 text-white transition-all cursor-pointer">All Works</button>
+                <button onclick="filterWorks('toy-stories', event)" class="filter-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:bg-zinc-800 transition-all cursor-pointer">Toy Stories</button>
+                <button onclick="filterWorks('portraits', event)" class="filter-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:bg-zinc-800 transition-all cursor-pointer">Portraits</button>
+                <button onclick="filterWorks('cinematic', event)" class="filter-btn px-4 py-2 rounded-full bg-zinc-900 text-zinc-400 hover:bg-zinc-800 transition-all cursor-pointer">Cinematic Narratives</button>
+            </div>
+        </div>
+
+        <!-- Grid of Artworks -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+            <!-- Item 1 -->
+            <div class="artwork-item group cursor-pointer" data-category="cinematic">
+                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800" alt="Am Pool" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Cinematic Narratives</span>
+                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Am Pool (Perlenräuber)</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="artwork-item group cursor-pointer" data-category="portraits">
+                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&q=80&w=800" alt="Delikatessen" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Portraits</span>
+                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Delikatessen</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="artwork-item group cursor-pointer" data-category="toy-stories">
+                <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900">
+                    <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=800" alt="Toy Story Composition" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                        <span class="text-amber-400 text-xs tracking-widest uppercase font-mono">Toy Stories</span>
+                        <h3 class="font-cinzel text-xl font-medium text-white mt-1">Scene III: Childhood Echoes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ART CLASSES & BOOKING SECTION -->
+    <section id="classes" class="py-24 bg-zinc-900/50 border-y border-zinc-900">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Mentorship & Masterclasses</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-6">Learn Classical & Narrative Painting</h2>
+                <p class="text-zinc-400 font-light mb-6">Structured private sessions and ateliers available for aspiring artists of all ages—focusing on visual storytelling, foundational form, and lighting.</p>
+                <ul class="space-y-4 text-sm text-zinc-300 mb-8">
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Composition & Framing Techniques</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Oil & Acrylic Training for Kids & Adults</li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-amber-500 mr-3"></i> Individual Portfolio Development</li>
+                </ul>
+                <button onclick="openBookingModal()" class="bg-amber-600 hover:bg-amber-500 text-white font-medium px-8 py-4 rounded-full transition-all cursor-pointer">Book a Class Session</button>
+            </div>
+            <div class="bg-zinc-900 p-8 rounded-2xl border border-zinc-800">
+                <h3 class="font-cinzel text-2xl font-semibold mb-4">Class Overview</h3>
+                <div class="space-y-6 text-sm text-zinc-400">
+                    <div class="border-b border-zinc-800 pb-4">
+                        <div class="flex justify-between font-semibold text-white mb-1">
+                            <span>Youth Art Atelier (Kids)</span>
+                            <span class="text-amber-500">Weekly Group</span>
+                        </div>
+                        <p>Encouraging spatial imagination and drawing fundamentals through engaging projects.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between font-semibold text-white mb-1">
+                            <span>Masterclass (Advanced)</span>
+                            <span class="text-amber-500">By Arrangement</span>
+                        </div>
+                        <p>Deep dive into figurative accuracy, dramatic setups, and layered storytelling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESS & AWARDS SECTION -->
+    <section id="press" class="py-24 max-w-7xl mx-auto px-6">
+        <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold">Recognition</span>
+        <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2 mb-12">Press & Awards</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <span class="text-xs text-zinc-500 font-mono">Nürnberger Nachrichten — Sept 2005</span>
+                <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">Vom Kino und alten Meistern inspiriert</h3>
+                <p class="text-zinc-400 text-sm font-light">Review by Birgit Ruf on the Kunstpreis-schau exhibition, detailing the cinematic framing and themes present in his work.</p>
+            </div>
+            <div class="p-8 rounded-xl bg-zinc-900 border border-zinc-800/80">
+                <span class="text-xs text-zinc-500 font-mono">Kunsthalle Rostock — Oct 2018</span>
+                <h3 class="font-cinzel text-xl font-medium text-white mt-2 mb-3">«Was uns verbindet» Exhibition</h3>
+                <p class="text-zinc-400 text-sm font-light">Featured among 30 select contemporary works bridging diverse narratives and identities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+    <footer class="bg-zinc-950 border-t border-zinc-900 py-16">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <span class="font-cinzel text-lg tracking-widest font-semibold block">ALEXANDER IVANOVSKI</span>
+                <p class="text-xs text-zinc-500 mt-1">Based in Germany • All rights reserved</p>
+            </div>
+            <div class="flex space-x-6 text-xl text-zinc-400">
+                <a href="mailto:ivanovskialexander@gmail.com" class="hover:text-amber-500 transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        function filterWorks(category, event) {
+            const items = document.querySelectorAll('.artwork-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Update active pill button styling
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-zinc-800', 'text-white');
+                btn.classList.add('bg-zinc-900', 'text-zinc-400');
+            });
+            event.currentTarget.classList.remove('bg-zinc-900', 'text-zinc-400');
+            event.currentTarget.classList.add('bg-zinc-800', 'text-white');
+
+            // Filter the grid items seamlessly
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function openBookingModal() {
+            window.location.href = "mailto:ivanovskialexander@gmail.com?subject=Art%20Class%20Booking%20Inquiry";
+        }
+    </script>
+</body>
+</html>
 
