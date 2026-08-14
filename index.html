@@ -28,6 +28,7 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
             <a href="#" class="font-cinzel text-sm sm:text-base md:text-xl tracking-widest font-semibold uppercase truncate max-w-[180px] sm:max-w-none">Alexander Ivanovski</a>
             <nav class="hidden lg:flex items-center space-x-6 text-xs md:text-sm tracking-wider uppercase">
+                <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
                 <a href="#gallery" class="hover:text-amber-500 transition-colors" data-i18n="nav-paintings">Paintings</a>
                 <a href="#toy-stories" class="hover:text-amber-500 transition-colors" data-i18n="nav-toy-stories">Toy Stories</a>
                 <a href="#portraits" class="hover:text-amber-500 transition-colors" data-i18n="nav-portraits">Portraits</a>
@@ -49,6 +50,7 @@
         </div>
         <!-- Mobile Sub-nav bar -->
         <div class="lg:hidden flex items-center justify-around bg-zinc-900/90 border-t border-zinc-800/80 px-2 py-2 text-xs uppercase tracking-wider">
+            <a href="#wild-wild-west" class="hover:text-amber-500" data-i18n="nav-wild-wild-west">Wild West</a>
             <a href="#gallery" class="hover:text-amber-500" data-i18n="nav-paintings">Paintings</a>
             <a href="#toy-stories" class="hover:text-amber-500" data-i18n="nav-toy-stories">Toy Stories</a>
             <a href="#portraits" class="hover:text-amber-500" data-i18n="nav-portraits">Portraits</a>
@@ -66,14 +68,38 @@
             <h1 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6" data-i18n="hero-title">Art as a Frame</h1>
             <p class="text-zinc-400 text-base md:text-lg font-light mb-8 max-w-xl mx-auto" data-i18n="hero-desc">Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#gallery" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all text-sm md:text-base" data-i18n="hero-btn-explore">Explore Paintings</a>
+                <a href="#wild-wild-west" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all text-sm md:text-base" data-i18n="hero-btn-explore">Explore New Series</a>
                 <button onclick="openArchiveModal()" class="inline-block border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-full hover:border-amber-500 transition-all cursor-pointer text-sm md:text-base" data-i18n="hero-btn-archive">View Full Archive</button>
             </div>
         </div>
     </section>
 
+    <!-- WILD WILD WEST SECTION (NEWEST COLLECTION) -->
+    <section id="wild-wild-west" class="py-24 max-w-7xl mx-auto px-4 md:px-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+            <div>
+                <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="wildwest-tag">Newest Collection</span>
+                <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2" data-i18n="wildwest-title">Wild Wild West</h2>
+                <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="wildwest-desc">Explore the newest collection series featuring frontier narratives and dynamic compositions.</p>
+            </div>
+            <button onclick="openWildWestModal()" class="mt-4 md:mt-0 text-sm text-amber-500 hover:text-amber-400 font-medium inline-flex items-center cursor-pointer">
+                <span data-i18n="wildwest-view-all">View all Paintings in Wild Wild West Collection</span> <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+        <!-- Swipe Note for Wild Wild West -->
+        <div class="flex items-center text-xs text-amber-400/80 mb-4 font-mono tracking-wide">
+            <i class="fa-solid fa-arrows-left-right mr-2 animate-pulse"></i> <span data-i18n="swipe-note">Swipe horizontally to view more artwork</span>
+        </div>
+
+        <!-- Swipeable Row Container for Wild Wild West -->
+        <div class="flex overflow-x-auto space-x-6 no-scrollbar pb-6 snap-x snap-mandatory" id="wildwest-grid">
+            <!-- Populated dynamically via JS -->
+        </div>
+    </section>
+
     <!-- PAINTINGS / SWIPEABLE GALLERY SECTION -->
-    <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 md:px-6">
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 md:px-6 border-t border-zinc-900">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
             <div>
                 <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="gallery-tag">Visual Archive</span>
@@ -100,7 +126,7 @@
         <div class="max-w-7xl mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
                 <div>
-                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-tag">New Series</span>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="toystories-tag">Series</span>
                     <h2 class="font-cinzel text-3xl md:text-4xl font-bold mt-2">Toy Stories</h2>
                     <p class="text-zinc-400 text-sm mt-2 max-w-xl font-light" data-i18n="toystories-desc">Explore the latest collection series featuring unique narrative compositions.</p>
                 </div>
@@ -290,6 +316,25 @@
         </div>
     </div>
 
+    <!-- WILD WILD WEST COLLECTION MODAL -->
+    <div id="wildwest-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-8 md:mb-12 border-b border-zinc-800 pb-6">
+                <div>
+                    <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="wildwest-modal-tag">Wild Wild West Collection</span>
+                    <h2 class="font-cinzel text-2xl md:text-4xl font-bold mt-1" data-i18n="wildwest-modal-title">Wild Wild West Archive</h2>
+                </div>
+                <button onclick="closeWildWestModal()" class="bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-medium transition-all cursor-pointer border border-zinc-800">
+                    <i class="fa-solid fa-xmark mr-2"></i> <span data-i18n="modal-close">Close Archive</span>
+                </button>
+            </div>
+            <!-- Auto-generated grid containing Wild Wild West images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="modal-wildwest-grid">
+                <!-- Dynamically populated via script -->
+            </div>
+        </div>
+    </div>
+
     <!-- TOY STORIES COLLECTION MODAL -->
     <div id="toy-stories-modal" class="fixed inset-0 z-50 bg-zinc-950/95 backdrop-blur-xl hidden overflow-y-auto p-4 md:p-12">
         <div class="max-w-7xl mx-auto">
@@ -345,7 +390,7 @@
 
     <!-- SCRIPT: TRANSLATIONS, SWIPEABLE ROWS, DYNAMIC ARRAYS -->
     <script>
-        // Array containing regular paintings (Updated with new files)
+        // Array containing regular paintings
         const allPaintings = [
             "IMG_5118.jpeg", "IMG_5183.jpeg", "IMG_5184.jpeg",
             "IMG_7315.jpeg", "IMG_7317.jpeg", "IMG_7319.jpeg", "IMG_7321.jpeg",
@@ -358,6 +403,18 @@
             "IMG_7350.jpeg", "IMG_7351.jpeg", "IMG_7352.jpeg", "IMG_7353.jpeg",
             "IMG_7354.jpeg", "IMG_7355.jpeg", "IMG_7452.jpeg", "IMG_7454.jpeg", 
             "IMG_7455.jpeg", "IMG_7456.jpeg"
+        ];
+
+        // Array containing Wild Wild West series images (New Collection)
+        const wildWildWestImages = [
+            "IMG_7421.jpeg", "IMG_7422.jpeg", "IMG_7423.jpeg", "IMG_7424.jpeg",
+            "IMG_7425.jpeg", "IMG_7426.jpeg", "IMG_7427.jpeg", "IMG_7428.jpeg",
+            "IMG_7429.jpeg", "IMG_7430.jpeg", "IMG_7431.jpeg", "IMG_7432.jpeg",
+            "IMG_7433.jpeg", "IMG_7434.jpeg", "IMG_7435.jpeg", "IMG_7436.jpeg",
+            "IMG_7437.jpeg", "IMG_7438.jpeg", "IMG_7439.jpeg", "IMG_7440.jpeg",
+            "IMG_7441.jpeg", "IMG_7442.jpeg", "IMG_7443.jpeg", "IMG_7444.jpeg",
+            "IMG_7445.jpeg", "IMG_7446.jpeg", "IMG_7447.jpeg", "IMG_7449.jpeg",
+            "IMG_7451.jpeg", "IMG_7453.jpeg"
         ];
 
         // Array containing Toy Stories series images
@@ -393,6 +450,7 @@
         const translations = {
             en: {
                 "meta-title": "Alexander Ivanovski | Fine Art & Painting",
+                "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Paintings",
                 "nav-toy-stories": "Toy Stories",
                 "nav-portraits": "Portraits",
@@ -402,13 +460,19 @@
                 "hero-subtitle": "Painter & Artist",
                 "hero-title": "Art as a Frame",
                 "hero-desc": "Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.",
-                "hero-btn-explore": "Explore Paintings",
+                "hero-btn-explore": "Explore New Series",
                 "hero-btn-archive": "View Full Archive",
+                "wildwest-tag": "Newest Collection",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Explore the newest collection series featuring frontier narratives and dynamic compositions.",
+                "wildwest-view-all": "View all Paintings in Wild Wild West Collection",
+                "wildwest-modal-tag": "Wild Wild West Collection",
+                "wildwest-modal-title": "Wild Wild West Archive",
                 "gallery-tag": "Visual Archive",
                 "gallery-title": "Featured Paintings",
                 "gallery-view-all": "View All Paintings in Archive",
                 "swipe-note": "Swipe horizontally to view more artwork",
-                "toystories-tag": "New Series",
+                "toystories-tag": "Series",
                 "toystories-desc": "Explore the latest collection series featuring unique narrative compositions.",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Toy Stories Collection",
@@ -449,6 +513,7 @@
             },
             de: {
                 "meta-title": "Alexander Ivanovski | Bildende Kunst & Malerei",
+                "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Gemälde",
                 "nav-toy-stories": "Toy Stories",
                 "nav-portraits": "Porträts",
@@ -458,13 +523,19 @@
                 "hero-subtitle": "Maler & Künstler",
                 "hero-title": "Kunst als Rahmen",
                 "hero-desc": "Erforschung menschlicher Beziehungen, psychologischer Dramen und klassischer Beleuchtung, inspiriert vom europäischen Kino und alten Meistern.",
-                "hero-btn-explore": "Gemälde Erkunden",
+                "hero-btn-explore": "Neue Serie Erkunden",
                 "hero-btn-archive": "Vollständiges Archiv",
+                "wildwest-tag": "Neueste Kollektion",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Entdecken Sie die neueste Kollektion mit Grenzland-Narrativen und dynamischen Kompositionen.",
+                "wildwest-view-all": "Alle Gemälde der Wild Wild West Kollektion ansehen",
+                "wildwest-modal-tag": "Wild Wild West Kollektion",
+                "wildwest-modal-title": "Wild Wild West Archiv",
                 "gallery-tag": "Visuelles Archiv",
                 "gallery-title": "Ausgewählte Gemälde",
                 "gallery-view-all": "Alle Gemälde im Archiv ansehen",
                 "swipe-note": "Horizontal wischen, um mehr Kunstwerke zu sehen",
-                "toystories-tag": "Neue Serie",
+                "toystories-tag": "Serie",
                 "toystories-desc": "Entdecken Sie die neueste Kollektion mit einzigartigen narrativen Kompositionen.",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Toy Stories Kollektion",
@@ -505,6 +576,7 @@
             },
             es: {
                 "meta-title": "Alexander Ivanovski | Bellas Artes y Pintura",
+                "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Pinturas",
                 "nav-toy-stories": "Toy Stories",
                 "nav-portraits": "Retratos",
@@ -514,13 +586,19 @@
                 "hero-subtitle": "Pintor y Artista",
                 "hero-title": "El Arte como Marco",
                 "hero-desc": "Explorando relaciones humanas, drama psicológico e iluminación clásica inspirada en el cine europeo y los viejos maestros.",
-                "hero-btn-explore": "Explorar Pinturas",
+                "hero-btn-explore": "Explorar Nueva Serie",
                 "hero-btn-archive": "Ver Archivo Completo",
+                "wildwest-tag": "Colección Más Reciente",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Explore la colección más reciente con narrativas de frontera y composiciones dinámicas.",
+                "wildwest-view-all": "Ver todas las pinturas de la colección Wild Wild West",
+                "wildwest-modal-tag": "Colección Wild Wild West",
+                "wildwest-modal-title": "Archivo Wild Wild West",
                 "gallery-tag": "Archivo Visual",
                 "gallery-title": "Pinturas Destacadas",
                 "gallery-view-all": "Ver Todas las Pinturas en el Archivo",
                 "swipe-note": "Desliza horizontalmente para ver más obras",
-                "toystories-tag": "Nueva Serie",
+                "toystories-tag": "Serie",
                 "toystories-desc": "Explore la última colección con composiciones narrativas únicas.",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Colección Toy Stories",
@@ -561,6 +639,7 @@
             },
             it: {
                 "meta-title": "Alexander Ivanovski | Belle Arti e Pittura",
+                "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Dipinti",
                 "nav-toy-stories": "Toy Stories",
                 "nav-portraits": "Ritratti",
@@ -570,13 +649,19 @@
                 "hero-subtitle": "Pittore e Artista",
                 "hero-title": "L'Arte come Cornice",
                 "hero-desc": "Esplorando relazioni umane, dramma psicologico e illuminazione classica ispirata al cinema europeo e ai grandi maestri.",
-                "hero-btn-explore": "Esplora i Dipinti",
+                "hero-btn-explore": "Esplora Nuova Serie",
                 "hero-btn-archive": "Visualizza Archivio Completo",
+                "wildwest-tag": "Collezione più recente",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Esplora la collezione più recente con narrazioni di frontiera e composizioni dinamiche.",
+                "wildwest-view-all": "Visualizza tutti i dipinti della collezione Wild Wild West",
+                "wildwest-modal-tag": "Collezione Wild Wild West",
+                "wildwest-modal-title": "Archivio Wild Wild West",
                 "gallery-tag": "Archivio Visivo",
                 "gallery-title": "Dipinti in Evidenza",
                 "gallery-view-all": "Visualizza Tutti i Dipinti nell'Archivio",
                 "swipe-note": "Scorri orizzontalmente per vedere più opere",
-                "toystories-tag": "Nuova Serie",
+                "toystories-tag": "Serie",
                 "toystories-desc": "Esplora l'ultima collezione con composizioni narrative uniche.",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Collezione Toy Stories",
@@ -617,6 +702,7 @@
             },
             zh: {
                 "meta-title": "Alexander Ivanovski | 美术与绘画",
+                "nav-wild-wild-west": "蛮荒西部",
                 "nav-paintings": "画作",
                 "nav-toy-stories": "玩具故事",
                 "nav-portraits": "肖像",
@@ -626,13 +712,19 @@
                 "hero-subtitle": "画家与艺术家",
                 "hero-title": "艺术作为画框",
                 "hero-desc": "探索受欧洲电影和古典大师启发的人际关系、心理戏剧与古典光影。",
-                "hero-btn-explore": "探索画作",
+                "hero-btn-explore": "探索最新系列",
                 "hero-btn-archive": "查看完整档案",
+                "wildwest-tag": "最新收藏",
+                "wildwest-title": "蛮荒西部 (Wild Wild West)",
+                "wildwest-desc": "探索融合边疆叙事与动态构图的最新收藏系列。",
+                "wildwest-view-all": "查看蛮荒西部系列的所有画作",
+                "wildwest-modal-tag": "蛮荒西部系列",
+                "wildwest-modal-title": "蛮荒西部档案",
                 "gallery-tag": "视觉档案",
                 "gallery-title": "精选画作",
                 "gallery-view-all": "查看档案中的所有画作",
                 "swipe-note": "向左或向右滑动以查看更多艺术品",
-                "toystories-tag": "全新系列",
+                "toystories-tag": "系列",
                 "toystories-desc": "探索融合独特叙事构图的最新收藏系列。",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "玩具故事系列",
@@ -673,6 +765,7 @@
             },
             ru: {
                 "meta-title": "Alexander Ivanovski | Изобразительное искусство и живопись",
+                "nav-wild-wild-west": "Дикий Запад",
                 "nav-paintings": "Картины",
                 "nav-toy-stories": "Toy Stories",
                 "nav-portraits": "Портреты",
@@ -682,13 +775,19 @@
                 "hero-subtitle": "Художник",
                 "hero-title": "Искусство как рамка",
                 "hero-desc": "Исследование человеческих отношений, психологической драмы и классического освещения, вдохновленное европейским кино и старыми мастерами.",
-                "hero-btn-explore": "Исследовать картины",
+                "hero-btn-explore": "Исследовать новую серию",
                 "hero-btn-archive": "Полный архив",
+                "wildwest-tag": "Новейшая коллекция",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Изучите новейшую коллекцию с пограничными сюжетами и динамичными композициями.",
+                "wildwest-view-all": "Посмотреть все картины коллекции Wild Wild West",
+                "wildwest-modal-tag": "Коллекция Wild Wild West",
+                "wildwest-modal-title": "Архив Wild Wild West",
                 "gallery-tag": "Визуальный архив",
                 "gallery-title": "Избранные картины",
                 "gallery-view-all": "Посмотреть все картины в архиве",
                 "swipe-note": "Проведите пальцем горизонтально, чтобы увидеть больше работ",
-                "toystories-tag": "Новая серия",
+                "toystories-tag": "Серия",
                 "toystories-desc": "Изучите последнюю коллекцию с уникальными сюжетными композициями.",
                 "toystories-view-all": "View all Paintings in Toy Stories Collection",
                 "toystories-modal-tag": "Коллекция Toy Stories",
@@ -777,6 +876,24 @@
             return arr;
         }
 
+        // Populate Swipeable Row for Wild Wild West (Randomized on every page load)
+        const wildWestGrid = document.getElementById('wildwest-grid');
+        let wildWestHTML = '';
+        const randomizedWildWest = shuffleArray(wildWildWestImages);
+        randomizedWildWest.forEach((img, index) => {
+            wildWestHTML += `
+                <div class="flex-none w-[280px] sm:w-[320px] snap-start group cursor-pointer" onclick="openWildWestModal()">
+                    <div class="relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                        <img src="${img}" alt="Wild Wild West ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                            <span class="text-amber-400 text-xs font-mono">Wild Wild West Series</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        wildWestGrid.innerHTML = wildWestHTML;
+
         // Populate Swipeable Gallery Row (Paintings)
         const swipeableGrid = document.getElementById('swipeable-grid');
         let swipeHTML = '';
@@ -846,6 +963,21 @@
         });
         modalGrid.innerHTML = archiveHTML;
 
+        // Populate Wild Wild West Modal Grid Automatically
+        const wildWestModalGrid = document.getElementById('modal-wildwest-grid');
+        let wildWestModalHTML = '';
+        wildWildWestImages.forEach((img, index) => {
+            wildWestModalHTML += `
+                <div class="group relative overflow-hidden aspect-[4/5] rounded-xl bg-zinc-900 border border-zinc-800/80">
+                    <img src="${img}" alt="Wild Wild West ${index + 1}" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                        <span class="text-amber-400 text-xs font-mono">Wild Wild West #${index + 1}</span>
+                    </div>
+                </div>
+            `;
+        });
+        wildWestModalGrid.innerHTML = wildWestModalHTML;
+
         // Populate Toy Stories Modal Grid Automatically
         const toyModalGrid = document.getElementById('modal-toystories-grid');
         let toyModalHTML = '';
@@ -891,6 +1023,16 @@
 
         function closeArchiveModal() {
             document.getElementById('archive-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openWildWestModal() {
+            document.getElementById('wildwest-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWildWestModal() {
+            document.getElementById('wildwest-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
