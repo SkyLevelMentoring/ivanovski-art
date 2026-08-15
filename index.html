@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .font-cinzel { font-family: 'Cinzel', serif; }
@@ -42,6 +42,10 @@
               <option value="it">Italiano</option>
               <option value="zh">中文</option>
               <option value="ru">Русский</option>
+              <option value="pt">Português</option>
+              <option value="ar">العربية</option>
+              <option value="he">עברית</option>
+              <option value="fr">Français</option>
             </select>
           </div>
         </div>
@@ -50,6 +54,9 @@
         <nav class="w-full overflow-x-auto no-scrollbar py-1 md:py-0">
           <ul class="flex items-center space-x-0 whitespace-nowrap text-xs md:text-sm uppercase tracking-wider text-zinc-400">
             <li class="flex items-center pr-3 md:pr-4">
+              <a href="#biography" class="hover:text-amber-500 transition-colors" data-i18n="nav-biography">Biography</a>
+            </li>
+            <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
               <a href="#wild-wild-west" class="hover:text-amber-500 transition-colors" data-i18n="nav-wild-wild-west">Wild Wild West</a>
             </li>
             <li class="flex items-center px-3 md:px-4 border-l border-zinc-700/60">
@@ -84,6 +91,210 @@
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#wild-wild-west" class="inline-block bg-white text-zinc-950 font-medium px-8 py-4 rounded-full hover:bg-amber-500 hover:text-white transition-all text-sm md:text-base" data-i18n="hero-btn-explore">Explore New Series</a>
                 <button onclick="openArchiveModal()" class="inline-block border border-zinc-700 bg-zinc-900/60 backdrop-blur-sm text-white font-medium px-8 py-4 rounded-full hover:border-amber-500 transition-all cursor-pointer text-sm md:text-base" data-i18n="hero-btn-archive">View Full Archive</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIOGRAPHY SECTION -->
+    <section id="biography" class="py-24 max-w-7xl mx-auto px-4 md:px-6 border-b border-zinc-900">
+        <div class="mb-12">
+            <span class="text-amber-500 uppercase tracking-widest text-xs font-semibold" data-i18n="bio-tag">About the Artist</span>
+            <h2 class="font-cinzel text-3xl md:text-5xl font-bold mt-2 text-white" data-i18n="bio-title">Biography & Philosophy</h2>
+        </div>
+
+        <!-- Statement Block -->
+        <div class="bg-zinc-900/60 border border-zinc-800 p-6 md:p-10 rounded-2xl mb-12 shadow-xl">
+            <p class="text-zinc-200 text-base md:text-lg leading-relaxed font-light italic" data-i18n="bio-statement">
+                “Alexander Ivanovski sees compositions as the main statements of his pictorial ideas. They have a number of characteristics that express their monumentality: impressively large format, conscious compositional planning, transcendence of pictorial stories. Just as symphonies are milestones in a composer's career, Alexander Ivanovski's multifaceted works represent the culmination of his artistic vision at any given moment.”
+            </p>
+            <div class="mt-6 pt-6 border-t border-zinc-800/80 flex flex-wrap gap-6 text-sm text-amber-500">
+                <a href="mailto:ivanovskialexander@gmail.com" class="hover:underline flex items-center gap-2"><i class="fa-solid fa-envelope"></i> ivanovskialexander@gmail.com</a>
+                <a href="https://www.instagram.com/alexander_ivanovski72?igsh=NWgyd2todWw2MDRv" target="_blank" class="hover:underline flex items-center gap-2"><i class="fa-brands fa-instagram"></i> @alexander_ivanovski72</a>
+            </div>
+        </div>
+
+        <!-- Featured Biography Images Gallery -->
+        <div class="mb-16">
+            <h3 class="font-cinzel text-xl md:text-2xl font-semibold mb-6 text-zinc-200" data-i18n="bio-gallery-title">Selected Works & Visual Studies</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                <div class="aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer group" onclick="openImageViewer('IMG_7488.jpeg')">
+                    <img src="IMG_7488.jpeg" alt="Biography Artwork 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer group" onclick="openImageViewer('IMG_7470.jpeg')">
+                    <img src="IMG_7470.jpeg" alt="Biography Artwork 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer group" onclick="openImageViewer('IMG_7448.jpeg')">
+                    <img src="IMG_7448.jpeg" alt="Biography Artwork 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer group" onclick="openImageViewer('IMG_7409.jpeg')">
+                    <img src="IMG_7409.jpeg" alt="Biography Artwork 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="aspect-[4/5] overflow-hidden rounded-xl bg-zinc-900 border border-zinc-800 cursor-pointer group" onclick="openImageViewer('IMG_7391.jpeg')">
+                    <img src="IMG_7391.jpeg" alt="Biography Artwork 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Life & Philosophy Narrative -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+            <div class="bg-zinc-900/40 p-6 md:p-8 rounded-xl border border-zinc-800/80">
+                <h3 class="font-cinzel text-xl font-bold text-amber-500 mb-4" data-i18n="bio-early-life-title">Early Life & Education</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed font-light" data-i18n="bio-early-life-desc">
+                    Alexander Ivanovski was born on November 16, 1972, in Karaganda, Kazakhstan. His formal artistic instruction began at a local art school in Karaganda (1983–1988), followed by higher education at the College of Art, Design and Creation in Krasnoturjinsk, Russia (1988–1992). He went on to study at the Art Academy of St. Petersburg from 1992 to 1994. In 1999, Ivanovski relocated to Germany with his family. He enrolled at the Academy of Fine Arts in Nuremberg studying free painting under Professor Christine Sack-Colditz, achieving Master Student distinction in 2004 and completing his degree in 2005.
+                </p>
+            </div>
+            <div class="bg-zinc-900/40 p-6 md:p-8 rounded-xl border border-zinc-800/80">
+                <h3 class="font-cinzel text-xl font-bold text-amber-500 mb-4" data-i18n="bio-style-title">Artistic Style & Philosophy</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed font-light" data-i18n="bio-style-desc">
+                    Ivanovski’s work focuses strictly on figurative representation and human relations, explicitly rejecting abstract or purely landscape painting. He draws technical influence from Old Dutch Masters—particularly their use of light—and structural inspiration from cinematic storytellers such as Luchino Visconti, Ingmar Bergman, and Andrei Tarkovsky. His large-format compositions are heavily planned, functioning like staged film stills that portray themes of interpersonal tension, gender dynamics, and narrative conflict.
+                </p>
+            </div>
+            <div class="bg-zinc-900/40 p-6 md:p-8 rounded-xl border border-zinc-800/80">
+                <h3 class="font-cinzel text-xl font-bold text-amber-500 mb-4" data-i18n="bio-career-title">Current Life & Career</h3>
+                <p class="text-zinc-400 text-sm leading-relaxed font-light" data-i18n="bio-career-desc">
+                    Ivanovski currently lives and works in Fürth, Germany. Over the past two decades, his work has been showcased widely across Europe and internationally, including exhibitions in Shenzhen (China), Skopje (Macedonia), Perugia (Italy), and Córdoba (Spain). He remains a frequent contributor to regional cultural institutions, including the Kunsthaus Nürnberg, the Künstlerbund Schwabach, and Kulturring C in Fürth.
+                </p>
+            </div>
+        </div>
+
+        <!-- Education & Awards Lists -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div>
+                <h3 class="font-cinzel text-2xl font-bold text-white mb-6 border-b border-zinc-800 pb-3" data-i18n="bio-edu-title">EDUCATION</h3>
+                <ul class="space-y-4 text-sm text-zinc-300">
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">1983 — 1988</span>
+                        <span data-i18n="edu-1">Art school in Karaganda / Kazakhstan</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">1988 — 1992</span>
+                        <span data-i18n="edu-2">University of Art, Design and Creation in Krasnoturjinsk / Russia</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">1992 — 1994</span>
+                        <span data-i18n="edu-3">Art Academy St. Petersburg</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">1999 — 2005</span>
+                        <span data-i18n="edu-4">Studied free painting with Prof. Colditz, Academy of Fine Arts Nuremberg</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">2005</span>
+                        <span data-i18n="edu-5">Salzburg, Art Academy (Jakobe Borges class)</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-cinzel text-2xl font-bold text-white mb-6 border-b border-zinc-800 pb-3" data-i18n="bio-awards-title">APPOINTMENTS / AWARDS / FELLOWSHIPS</h3>
+                <ul class="space-y-4 text-sm text-zinc-300">
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">2004</span>
+                        <span data-i18n="award-1">Appointment as master student (Meisterschüler)</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">2004</span>
+                        <span data-i18n="award-2">Nuremberg News Recognition Award</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">2005</span>
+                        <span data-i18n="award-3">Salzburg Summer Academy, class of Jakobo Borges</span>
+                    </li>
+                    <li class="border-l-2 border-amber-500 pl-4">
+                        <span class="text-amber-400 font-mono text-xs block">2021</span>
+                        <span data-i18n="award-4">Awarded the Special Exhibition Prize (Kunstpreis der Sonderausstellung) at Kunstpreis der Nürnberger Nachrichten for "Zu neuen Horizonten"</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Comprehensive Exhibitions List -->
+        <div>
+            <h3 class="font-cinzel text-2xl font-bold text-white mb-8 border-b border-zinc-800 pb-3" data-i18n="bio-exhibitions-title">EXHIBITIONS LIST</h3>
+            <div class="space-y-6 text-sm text-zinc-300">
+                <div class="bg-zinc-900/30 p-5 rounded-xl border border-zinc-800/60">
+                    <span class="text-amber-500 font-bold font-mono text-base block mb-2">Recent News & Exhibitions (2021–Present)</span>
+                    <ul class="list-disc list-inside space-y-2 text-zinc-400 font-light">
+                        <li><strong class="text-white font-medium">2021:</strong> Awarded Special Exhibition Prize at Kunstpreis der Nürnberger Nachrichten for "Zu neuen Horizonten".</li>
+                        <li><strong class="text-white font-medium">2022:</strong> Participated in the International Art Symposium on Rab Island, Croatia.</li>
+                        <li><strong class="text-white font-medium">2025:</strong> Featured in group exhibition "Rokokissimo" (June 27 – Aug 10, 2025) at Kunsthaus R3 Ansbach, Stadthaus Schwabach, St. Gumbertus.</li>
+                    </ul>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2004</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>Line — color — form, Kunstverein Erlangen c/o Neue Galerie</li>
+                            <li>Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>NN Art Prize Guest Performance, Shenzhen Fine Art Institute, China</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2005</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>Alexander Ivanovski, painting — Academy of Fine Arts (solo exhibition)</li>
+                            <li>Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>Role model — enemy image, Kunstverein GRAZ, Regensburg</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2006</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>Large art exhibition — through the looking glass, Haus der Kunst Munich</li>
+                            <li>Art Prize of the Nürnberger Nachrichten 2006, Kunsthaus Nürnberg</li>
+                            <li>NN Art Prize Guest Performance, Museum of Contemporary Art Skopje, Macedonia</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2008</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>Alexander Ivanovski, painting — hase&moos, kunstforum e.V., Nuremberg (solo exhibition)</li>
+                            <li>Russian Variations, Die Drostei, Pinneberg (group exhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2009 — 2010</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>2009: Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>2010: Exhibition Gräfenberg (group exhibition)</li>
+                            <li>2010: Ri Galgata, Perugia, Italy (group exhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2011</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>Art prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg (catalogue)</li>
+                            <li>NN Art Prize special exhibition in Córdoba, Spain (group exhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2012 — 2013</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>2012: Art showcase in City-Center Fürth (solo)</li>
+                            <li>2012: Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>2012: Museum of Applied Arts, Gera (group exhibition)</li>
+                            <li>2013: Art showcase in City-Center Fürth (group exhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2017 — 2018</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>2017: Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>2017: "Guest performance" of Kulturring C in Fürth</li>
+                            <li>2018: Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>2018: Exhibition in Rostock "What connects us" (group exhibition)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-zinc-900/20 p-4 rounded-lg border border-zinc-800/40 col-span-1 md:col-span-2">
+                        <span class="text-amber-500 font-bold font-mono block mb-1">2019 — 2021</span>
+                        <ul class="list-disc list-inside space-y-1 text-xs text-zinc-400 font-light">
+                            <li>2019: Exhibitions of the Municipal Gallery Schwabach</li>
+                            <li>2019: Art Prize of the Nürnberger Nachrichten, Kunsthaus Nürnberg</li>
+                            <li>2019: "Guest performance" of Kulturring C in Fürth</li>
+                            <li>2021: Art Prize of Nürnberger Nachrichten & Kulturring C in Fürth</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -414,7 +625,7 @@
 
     <!-- SCRIPT: TRANSLATIONS, SWIPEABLE ROWS, DYNAMIC ARRAYS -->
     <script>
-        // Array containing regular paintings
+        // Array containing regular paintings (including IMG_7467.jpeg)
         const allPaintings = [
             "IMG_5118.jpeg", "IMG_5183.jpeg", "IMG_5184.jpeg",
             "IMG_7315.jpeg", "IMG_7317.jpeg", "IMG_7319.jpeg", "IMG_7321.jpeg",
@@ -427,7 +638,7 @@
             "IMG_7350.jpeg", "IMG_7351.jpeg", "IMG_7352.jpeg", "IMG_7353.jpeg",
             "IMG_7354.jpeg", "IMG_7355.jpeg", "IMG_7452.jpeg", "IMG_7454.jpeg", 
             "IMG_7456.jpeg", "IMG_7457.jpeg", "IMG_7458.jpeg", "IMG_7465.jpeg",
-            "IMG_7466.jpeg", "IMG_7468.jpeg", "IMG_7469.jpeg", "IMG_7472.jpeg",
+            "IMG_7466.jpeg", "IMG_7467.jpeg", "IMG_7468.jpeg", "IMG_7469.jpeg", "IMG_7472.jpeg",
             "IMG_7474.jpeg", "IMG_7475.jpeg", "IMG_7476.jpeg", "IMG_7477.jpeg",
             "IMG_7479.jpeg", "IMG_7482.jpeg", "IMG_7491.jpeg", "IMG_7492.jpeg",
             "IMG_7493.jpeg", "IMG_7494.jpeg", "IMG_7495.jpeg", "IMG_7496.jpeg",
@@ -460,7 +671,7 @@
             "IMG_7484.jpeg", "IMG_7485.jpeg", "IMG_7489.jpeg"
         ];
 
-        // Array containing Portraits images
+        // Array containing Portraits images (retaining IMG_7409.jpeg and IMG_7391.jpeg)
         const portraitsImages = [
             "IMG_7383.jpeg", "IMG_7384.jpeg", "IMG_7385.jpeg", "IMG_7386.jpeg",
             "IMG_7387.jpeg", "IMG_7388.jpeg", "IMG_7389.jpeg", "IMG_7390.jpeg",
@@ -484,6 +695,7 @@
         const translations = {
             en: {
                 "meta-title": "Alexander Ivanovski | Fine Art & Painting",
+                "nav-biography": "Biography",
                 "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Paintings",
                 "nav-toy-stories": "Toy Stories",
@@ -496,6 +708,28 @@
                 "hero-desc": "Exploring human relationships, psychological drama, and classical lighting inspired by European cinema and old masters.",
                 "hero-btn-explore": "Explore New Series",
                 "hero-btn-archive": "View Full Archive",
+                "bio-tag": "About the Artist",
+                "bio-title": "Biography & Philosophy",
+                "bio-statement": "“Alexander Ivanovski sees compositions as the main statements of his pictorial ideas. They have a number of characteristics that express their monumentality: impressively large format, conscious compositional planning, transcendence of pictorial stories. Just as symphonies are milestones in a composer's career, Alexander Ivanovski's multifaceted works represent the culmination of his artistic vision at any given moment.”",
+                "bio-gallery-title": "Selected Works & Visual Studies",
+                "bio-early-life-title": "Early Life & Education",
+                "bio-early-life-desc": "Alexander Ivanovski was born on November 16, 1972, in Karaganda, Kazakhstan. His formal artistic instruction began at a local art school in Karaganda (1983–1988), followed by higher education at the College of Art, Design and Creation in Krasnoturjinsk, Russia (1988–1992). He went on to study at the Art Academy of St. Petersburg from 1992 to 1994. In 1999, Ivanovski relocated to Germany with his family. He enrolled at the Academy of Fine Arts in Nuremberg studying free painting under Professor Christine Sack-Colditz, achieving Master Student distinction in 2004 and completing his degree in 2005.",
+                "bio-style-title": "Artistic Style & Philosophy",
+                "bio-style-desc": "Ivanovski’s work focuses strictly on figurative representation and human relations, explicitly rejecting abstract or purely landscape painting. He draws technical influence from Old Dutch Masters—particularly their use of light—and structural inspiration from cinematic storytellers such as Luchino Visconti, Ingmar Bergman, and Andrei Tarkovsky. His large-format compositions are heavily planned, functioning like staged film stills that portray themes of interpersonal tension, gender dynamics, and narrative conflict.",
+                "bio-career-title": "Current Life & Career",
+                "bio-career-desc": "Ivanovski currently lives and works in Fürth, Germany. Over the past two decades, his work has been showcased widely across Europe and internationally, including exhibitions in Shenzhen (China), Skopje (Macedonia), Perugia (Italy), and Córdoba (Spain). He remains a frequent contributor to regional cultural institutions, including the Kunsthaus Nürnberg, the Künstlerbund Schwabach, and Kulturring C in Fürth.",
+                "bio-edu-title": "EDUCATION",
+                "edu-1": "Art school in Karaganda / Kazakhstan",
+                "edu-2": "University of Art, Design and Creation in Krasnoturjinsk / Russia",
+                "edu-3": "Art Academy St. Petersburg",
+                "edu-4": "Studied free painting with Prof. Colditz, Academy of Fine Arts Nuremberg",
+                "edu-5": "Salzburg, Art Academy (Jakobe Borges class)",
+                "bio-awards-title": "APPOINTMENTS / AWARDS / FELLOWSHIPS",
+                "award-1": "Appointment as master student (Meisterschüler)",
+                "award-2": "Nuremberg News Recognition Award",
+                "award-3": "Salzburg Summer Academy, class of Jakobo Borges",
+                "award-4": "Awarded the Special Exhibition Prize at Kunstpreis der Nürnberger Nachrichten for 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "EXHIBITIONS LIST",
                 "wildwest-tag": "Newest Collection",
                 "wildwest-title": "Wild Wild West",
                 "wildwest-desc": "Explore the newest collection series featuring frontier narratives and dynamic compositions.",
@@ -547,6 +781,7 @@
             },
             de: {
                 "meta-title": "Alexander Ivanovski | Bildende Kunst & Malerei",
+                "nav-biography": "Biografie",
                 "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Gemälde",
                 "nav-toy-stories": "Toy Stories",
@@ -559,6 +794,28 @@
                 "hero-desc": "Erforschung menschlicher Beziehungen, psychologischer Dramen und klassischer Beleuchtung, inspiriert vom europäischen Kino und alten Meistern.",
                 "hero-btn-explore": "Neue Serie Erkunden",
                 "hero-btn-archive": "Vollständiges Archiv",
+                "bio-tag": "Über den Künstler",
+                "bio-title": "Biografie & Philosophie",
+                "bio-statement": "„Alexander Ivanovski sieht Kompositionen als die Hauptaussagen seiner bildnerischen Ideen. Sie besitzen Eigenschaften, die ihre Monumentalität ausdrücken: beeindruckend großes Format, bewusste kompositorische Planung, Transzendenz bildnerischer Geschichten. So wie Symphonien Meilensteine in der Karriere eines Komponisten sind, repräsentieren Alexander Ivanovskis vielschichtige Werke den Höhepunkt seiner künstlerischen Vision zu jedem Zeitpunkt.“",
+                "bio-gallery-title": "Ausgewählte Werke & Visuelle Studien",
+                "bio-early-life-title": "Frühes Leben & Ausbildung",
+                "bio-early-life-desc": "Alexander Ivanovski wurde am 16. November 1972 in Karaganda, Kasachstan, geboren. Seine künstlerische Ausbildung begann an einer Kunstschule in Karaganda (1983–1988), gefolgt von einer höheren Ausbildung an der Hochschule für Kunst und Design in Krasnoturjinsk, Russland (1988–1992). Von 1992 bis 1994 studierte er an der Kunstakademie St. Petersburg. 1999 zog er nach Deutschland und studierte freie Malerei an der Akademie der Bildenden Künste Nürnberg bei Prof. Christine Sack-Colditz, wo er 2004 zum Meisterschüler ernannt wurde.",
+                "bio-style-title": "Stil & Philosophie",
+                "bio-style-desc": "Ivanovskis Arbeit konzentriert sich auf figurative Darstellung und menschliche Beziehungen. Er lehnt abstrakte Malerei ab und zieht technische Einflüsse von den alten holländischen Meistern sowie dramatische Inspirationen von Filmemachern wie Visconti, Bergman und Tarkowski.",
+                "bio-career-title": "Leben & Karriere",
+                "bio-career-desc": "Ivanovski lebt und arbeitet in Fürth, Deutschland. Seine Werke wurden in ganz Europa und international ausgestellt, darunter in Shenzhen, Skopje, Perugia und Córdoba.",
+                "bio-edu-title": "AUSBILDUNG",
+                "edu-1": "Kunstschule in Karaganda / Kasachstan",
+                "edu-2": "Hochschule für Kunst und Design in Krasnoturjinsk / Russland",
+                "edu-3": "Kunstakademie St. Petersburg",
+                "edu-4": "Studium der freien Malerei bei Prof. Colditz, AdBK Nürnberg",
+                "edu-5": "Salzburg, Internationale Sommerakademie (Klasse Jakobe Borges)",
+                "bio-awards-title": "ERdescriptor / PREISE / STIPENDIEN",
+                "award-1": "Ernennung zum Meisterschüler",
+                "award-2": "Anerkennungspreis der Nürnberger Nachrichten",
+                "award-3": "Salzburger Sommerakademie, Klasse Jakobo Borges",
+                "award-4": "Sonderausstellungspreis des NN-Kunstpreises für 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "AUSSTELLUNGSVERZEICHNIS",
                 "wildwest-tag": "Neueste Kollektion",
                 "wildwest-title": "Wild Wild West",
                 "wildwest-desc": "Entdecken Sie die neueste Kollektion mit Grenzland-Narrativen und dynamischen Kompositionen.",
@@ -571,7 +828,7 @@
                 "swipe-note": "Horizontal wischen, um mehr Kunstwerke zu sehen",
                 "toystories-tag": "Serie",
                 "toystories-desc": "Entdecken Sie die neueste Kollektion mit einzigartigen narrativen Kompositionen.",
-                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-view-all": "Alle Gemälde der Toy Stories Kollektion ansehen",
                 "toystories-modal-tag": "Toy Stories Kollektion",
                 "toystories-modal-title": "Toy Stories Archiv",
                 "portraits-tag": "Charakterstudien",
@@ -610,6 +867,7 @@
             },
             es: {
                 "meta-title": "Alexander Ivanovski | Bellas Artes y Pintura",
+                "nav-biography": "Biografía",
                 "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Pinturas",
                 "nav-toy-stories": "Toy Stories",
@@ -622,6 +880,28 @@
                 "hero-desc": "Explorando relaciones humanas, drama psicológico e iluminación clásica inspirada en el cine europeo y los viejos maestros.",
                 "hero-btn-explore": "Explorar Nueva Serie",
                 "hero-btn-archive": "Ver Archivo Completo",
+                "bio-tag": "Sobre el Artista",
+                "bio-title": "Biografía y Filosofía",
+                "bio-statement": "“Alexander Ivanovski ve las composiciones como las declaraciones principales de sus ideas pictóricas. Tienen monumentalidad, gran formato y planificación deliberada.”",
+                "bio-gallery-title": "Obras Seleccionadas y Estudios Visuales",
+                "bio-early-life-title": "Primeros Años y Educación",
+                "bio-early-life-desc": "Nacido el 16 de noviembre de 1972 en Karagandá, Kazajistán. Formado en Rusia, San Petersburgo y la Academia de Bellas Artes de Núremberg.",
+                "bio-style-title": "Estilo Artístico",
+                "bio-style-desc": "Enfoque figurativo y narrativo inspirado en los Maestros Holandeses y cineastas como Tarkovsky y Bergman.",
+                "bio-career-title": "Vida Actual",
+                "bio-career-desc": "Reside y trabaja en Fürth, Alemania, exhibiendo internacionalmente.",
+                "bio-edu-title": "EDUCACIÓN",
+                "edu-1": "Escuela de arte en Karagandá / Kazajistán",
+                "edu-2": "Universidad de Arte y Diseño en Krasnoturyinsk / Rusia",
+                "edu-3": "Academia de Arte de San Petersburgo",
+                "edu-4": "Estudios con la Prof. Colditz, Academia de Núremberg",
+                "edu-5": "Academia de Verano de Salzburgo",
+                "bio-awards-title": "PREMIOS Y RECONOCIMIENTOS",
+                "award-1": "Nombramiento como Alumno Maestro (Meisterschüler)",
+                "award-2": "Premio de Reconocimiento Nürnberger Nachrichten",
+                "award-3": "Academia de Verano de Salzburgo",
+                "award-4": "Premio Especial de Exhibición por 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "LISTA DE EXPOSICIONES",
                 "wildwest-tag": "Colección Más Reciente",
                 "wildwest-title": "Wild Wild West",
                 "wildwest-desc": "Explore la colección más reciente con narrativas de frontera y composiciones dinámicas.",
@@ -634,7 +914,7 @@
                 "swipe-note": "Desliza horizontalmente para ver más obras",
                 "toystories-tag": "Serie",
                 "toystories-desc": "Explore la última colección con composiciones narrativas únicas.",
-                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-view-all": "Ver todas las pinturas de la colección Toy Stories",
                 "toystories-modal-tag": "Colección Toy Stories",
                 "toystories-modal-title": "Archivo Toy Stories",
                 "portraits-tag": "Estudios de Personajes",
@@ -645,7 +925,7 @@
                 "portraits-modal-title": "Archivo de Retratos",
                 "classes-tag": "Mentoría y Clases Magistrales",
                 "classes-title": "Aprende Pintura Clásica y Narrativa",
-                "classes-desc": "Sesiones privadas estructuradas y talleres para artistas de todas las edades—centrados en la narrativa visual, forma y luz.",
+                "classes-desc": "Sesiones privadas estructuradas y talleres para artistas de todas las edades.",
                 "classes-li-1": "Técnicas de Composición y Encuadre",
                 "classes-li-2": "Entrenamiento en Óleo y Acrílico para Niños y Adultos",
                 "classes-li-3": "Desarrollo de Portafolio Individual",
@@ -653,10 +933,10 @@
                 "classes-overview-title": "Resumen de Clases",
                 "class-1-title": "Atelier de Arte Juvenil (Niños)",
                 "class-1-badge": "Grupo Semanal",
-                "class-1-desc": "Fomentando la imaginación espacial y fundamentos de dibujo a través de proyectos atractivos.",
+                "class-1-desc": "Fomentando la imaginación espacial y fundamentos de dibujo.",
                 "class-2-title": "Clase Magistral (Avanzado)",
                 "class-2-badge": "Por Acuerdo",
-                "class-2-desc": "Inmersión profunda en precisión figurativa, montajes dramáticos y narración en capas.",
+                "class-2-desc": "Inmersión profunda en precisión figurativa y narrativa.",
                 "press-tag": "Reconocimiento",
                 "press-title": "Prensa y Premios",
                 "read-article": "Leer Artículo",
@@ -673,6 +953,7 @@
             },
             it: {
                 "meta-title": "Alexander Ivanovski | Belle Arti e Pittura",
+                "nav-biography": "Biografia",
                 "nav-wild-wild-west": "Wild Wild West",
                 "nav-paintings": "Dipinti",
                 "nav-toy-stories": "Toy Stories",
@@ -685,6 +966,28 @@
                 "hero-desc": "Esplorando relazioni umane, dramma psicologico e illuminazione classica ispirata al cinema europeo e ai grandi maestri.",
                 "hero-btn-explore": "Esplora Nuova Serie",
                 "hero-btn-archive": "Visualizza Archivio Completo",
+                "bio-tag": "L'Artista",
+                "bio-title": "Biografia e Filosofia",
+                "bio-statement": "“Alexander Ivanovski considera le composizioni come le principali affermazioni delle sue idee pittoriche, caratterizzate da monumentalità e pianificazione conscia.”",
+                "bio-gallery-title": "Opere Selezionate",
+                "bio-early-life-title": "Formazione",
+                "bio-early-life-desc": "Nato nel 1972 a Karaganda. Ha studiato a San Pietroburgo e all'Accademia di Belle Arti di Norimberga.",
+                "bio-style-title": "Stile e Visione",
+                "bio-style-desc": "Rappresentazione figurativa drammatica con luce ispirata ai vecchi maestri fiamminghi e al cinema d'autore.",
+                "bio-career-title": "Carriera Attuale",
+                "bio-career-desc": "Vive e lavora a Fürth, Germania. Ha esposto in tutta Europa e in Asia.",
+                "bio-edu-title": "ISTRUZIONE",
+                "edu-1": "Scuola d'arte a Karaganda / Kazakistan",
+                "edu-2": "Università d'Arte e Design a Krasnoturjinsk / Russia",
+                "edu-3": "Accademia d'Arte di San Pietroburgo",
+                "edu-4": "Accademia di Belle Arti di Norimberga",
+                "edu-5": "Accademia estiva di Salisburgo",
+                "bio-awards-title": "PREMI E RICONOSCIMENTI",
+                "award-1": "Nomina a Meisterschüler",
+                "award-2": "Premio di Riconoscimento Nürnberger Nachrichten",
+                "award-3": "Corso Jakobo Borges a Salisburgo",
+                "award-4": "Premio Speciale Mostra per 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "ELENCO MOSTRE",
                 "wildwest-tag": "Collezione più recente",
                 "wildwest-title": "Wild Wild West",
                 "wildwest-desc": "Esplora la collezione più recente con narrazioni di frontiera e composizioni dinamiche.",
@@ -697,7 +1000,7 @@
                 "swipe-note": "Scorri orizzontalmente per vedere più opere",
                 "toystories-tag": "Serie",
                 "toystories-desc": "Esplora l'ultima collezione con composizioni narrative uniche.",
-                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-view-all": "Visualizza tutti i dipinti della collezione Toy Stories",
                 "toystories-modal-tag": "Collezione Toy Stories",
                 "toystories-modal-title": "Archivio Toy Stories",
                 "portraits-tag": "Studi di Personaggi",
@@ -708,7 +1011,7 @@
                 "portraits-modal-title": "Archivio Ritratti",
                 "classes-tag": "Mentorship e Masterclass",
                 "classes-title": "Impara la Pittura Classica e Narrativa",
-                "classes-desc": "Sessioni private strutturate e atelier disponibili per artisti di tutte le età—incentrati sulla narrazione visiva, forma e luce.",
+                "classes-desc": "Sessioni private strutturate e atelier disponibili per artisti di tutte le età.",
                 "classes-li-1": "Tecniche di Composizione e Inquadratura",
                 "classes-li-2": "Formazione a Olio e Acrilico per Bambini e Adulti",
                 "classes-li-3": "Sviluppo del Portfolio Individuale",
@@ -716,10 +1019,10 @@
                 "classes-overview-title": "Panoramica dei Corsi",
                 "class-1-title": "Atelier d'Arte Giovanile (Bambini)",
                 "class-1-badge": "Gruppo Settimanale",
-                "class-1-desc": "Incoraggiare l'immaginazione spaziale e le basi del disegno attraverso progetti coinvolgenti.",
+                "class-1-desc": "Incoraggiare l'immaginazione spaziale e le basi del disegno.",
                 "class-2-title": "Masterclass (Avanzato)",
                 "class-2-badge": "Su Appuntamento",
-                "class-2-desc": "Tuffo profondo nell'accuratezza figurativa, scenografie drammatiche e narrazione stratificata.",
+                "class-2-desc": "Tuffo profondo nell'accuratezza figurativa e scenografie drammatiche.",
                 "press-tag": "Riconoscimenti",
                 "press-title": "Stampa e Premi",
                 "read-article": "Leggi Articolo",
@@ -736,6 +1039,7 @@
             },
             zh: {
                 "meta-title": "Alexander Ivanovski | 美术与绘画",
+                "nav-biography": "传记",
                 "nav-wild-wild-west": "蛮荒西部",
                 "nav-paintings": "画作",
                 "nav-toy-stories": "玩具故事",
@@ -748,6 +1052,28 @@
                 "hero-desc": "探索受欧洲电影和古典大师启发的人际关系、心理戏剧与古典光影。",
                 "hero-btn-explore": "探索最新系列",
                 "hero-btn-archive": "查看完整档案",
+                "bio-tag": "关于艺术家",
+                "bio-title": "传记与艺术哲学",
+                "bio-statement": "“亚历山大·伊万诺夫斯基将构图视为其绘画思想的主要表达。作品具有纪念碑式的宏大规格、深思熟虑的构图规划与超越画面的叙事力。”",
+                "bio-gallery-title": "精选作品与视觉研究",
+                "bio-early-life-title": "早年经历与教育",
+                "bio-early-life-desc": "出生于1972年哈萨克斯坦，先后来往俄罗斯圣彼得堡及德国纽伦堡艺术学院深造，2004年获得大师学生称号。",
+                "bio-style-title": "艺术风格与哲学",
+                "bio-style-desc": "专注于具象艺术与人性关系，汲取老荷兰大师的光影技巧与塔可夫斯基式的电影镜头感。",
+                "bio-career-title": "现状与生涯",
+                "bio-career-desc": "现居德国菲尔特，作品展出于中国深圳、马其顿斯科普里、意大利及西班牙等地。",
+                "bio-edu-title": "教育背景",
+                "edu-1": "哈萨克斯坦卡拉干达美术学校",
+                "edu-2": "俄罗斯克拉斯诺图里因斯克艺术设计学院",
+                "edu-3": "圣彼得堡艺术学院",
+                "edu-4": "纽伦堡艺术学院自由绘画专业",
+                "edu-5": "萨尔茨堡夏日艺术学院",
+                "bio-awards-title": "荣誉与奖项",
+                "award-1": "大师学生 (Meisterschüler) 称号",
+                "award-2": "纽伦堡新闻认可奖",
+                "award-3": "萨尔茨堡夏季学院奖",
+                "award-4": "纽伦堡新闻艺术奖特别展览奖",
+                "bio-exhibitions-title": "展览履历",
                 "wildwest-tag": "最新收藏",
                 "wildwest-title": "蛮荒西部 (Wild Wild West)",
                 "wildwest-desc": "探索融合边疆叙事与动态构图的最新收藏系列。",
@@ -760,7 +1086,7 @@
                 "swipe-note": "向左或向右滑动以查看更多艺术品",
                 "toystories-tag": "系列",
                 "toystories-desc": "探索融合独特叙事构图的最新收藏系列。",
-                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-view-all": "查看玩具故事系列的所有画作",
                 "toystories-modal-tag": "玩具故事系列",
                 "toystories-modal-title": "玩具故事档案",
                 "portraits-tag": "人物写生",
@@ -771,7 +1097,7 @@
                 "portraits-modal-title": "肖像档案",
                 "classes-tag": "导师辅导与大师班",
                 "classes-title": "学习古典与叙事绘画",
-                "classes-desc": "为各年龄段有志艺术家提供结构化的私教与工作室辅导——专注于视觉叙事、基础造型与光影。",
+                "classes-desc": "为各年龄段有志艺术家提供结构化的私教与工作室辅导。",
                 "classes-li-1": "构图与取景技巧",
                 "classes-li-2": "儿童与成人油画、丙烯培训",
                 "classes-li-3": "个人作品集发展指导",
@@ -799,6 +1125,7 @@
             },
             ru: {
                 "meta-title": "Alexander Ivanovski | Изобразительное искусство и живопись",
+                "nav-biography": "Биография",
                 "nav-wild-wild-west": "Дикий Запад",
                 "nav-paintings": "Картины",
                 "nav-toy-stories": "Toy Stories",
@@ -811,6 +1138,28 @@
                 "hero-desc": "Исследование человеческих отношений, психологической драмы и классического освещения, вдохновленное европейским кино и старыми мастерами.",
                 "hero-btn-explore": "Исследовать новую серию",
                 "hero-btn-archive": "Полный архив",
+                "bio-tag": "О художнике",
+                "bio-title": "Биография и философия",
+                "bio-statement": "«Александр Ивановский рассматривает композиции как главные высказывания своих живописных идей. Они обладают выраженной монументальностью, масштабным форматом и продуманным драматургическим замыслом.»",
+                "bio-gallery-title": "Избранные работы и этюды",
+                "bio-early-life-title": "Ранние годы и образование",
+                "bio-early-life-desc": "Родился 16 ноября 1972 года в Караганде. Обучался в худ. школе Караганды (1983–1988), Краснотурьинском художественном училище (1988–1992), Академии художеств Санкт-Петербурга (1992–1994) и Академии изящных искусств Нюрнберга (1999–2005).",
+                "bio-style-title": "Стиль и философия",
+                "bio-style-desc": "Строго фигуративное направление, драма человеческих отношений, свет старых голландских мастеров и кинематографичность в духе Тарковского и Бергмана.",
+                "bio-career-title": "Текущая деятельность",
+                "bio-career-desc": "Проживает и работает в Фюрте, Германия. Выставляется на ведущих European и международных площадках.",
+                "bio-edu-title": "ОБРАЗОВАНИЕ",
+                "edu-1": "Художественная школа в Караганде / Казахстан",
+                "edu-2": "Художественное училище в Краснотурьинске / Россия",
+                "edu-3": "Академия художеств Санкт-Петербурга",
+                "edu-4": "Академия изящных искусств Нюрнберга (класс проф. Кольдиц)",
+                "edu-5": "Летняя Академия художеств в Зальцбурге",
+                "bio-awards-title": "НАГРАДЫ И ЗВАНИЯ",
+                "award-1": "Звание Meisterschüler (Мастер-ученик)",
+                "award-2": "Премия Nürnberger Nachrichten",
+                "award-3": "Стипендия Летней академии Зальцбурга",
+                "award-4": "Специальный приз выставки NN-Kunstpreis за картину «Zu neuen Horizonten»",
+                "bio-exhibitions-title": "СПИСОК ВЫСТАВОК",
                 "wildwest-tag": "Новейшая коллекция",
                 "wildwest-title": "Wild Wild West",
                 "wildwest-desc": "Изучите новейшую коллекцию с пограничными сюжетами и динамичными композициями.",
@@ -823,7 +1172,7 @@
                 "swipe-note": "Проведите пальцем горизонтально, чтобы увидеть больше работ",
                 "toystories-tag": "Серия",
                 "toystories-desc": "Изучите последнюю коллекцию с уникальными сюжетными композициями.",
-                "toystories-view-all": "View all Paintings in Toy Stories Collection",
+                "toystories-view-all": "Посмотреть все картины коллекции Toy Stories",
                 "toystories-modal-tag": "Коллекция Toy Stories",
                 "toystories-modal-title": "Архив Toy Stories",
                 "portraits-tag": "Характерные этюды",
@@ -834,7 +1183,7 @@
                 "portraits-modal-title": "Архив портретов",
                 "classes-tag": "Наставничество и мастер-классы",
                 "classes-title": "Изучение классической и сюжетной живописи",
-                "classes-desc": "Структурированные частные занятия и мастерские для начинающих художников всех возрастов с акцентом на визуальное повествование и свет.",
+                "classes-desc": "Структурированные частные занятия и мастерские для начинающих художников всех возрастов.",
                 "classes-li-1": "Техники композиции и кадрирования",
                 "classes-li-2": "Обучение масляной и акриловой живописи",
                 "classes-li-3": "Индивидуальное развитие портфолио",
@@ -842,10 +1191,10 @@
                 "classes-overview-title": "Обзор занятий",
                 "class-1-title": "Молодежная арт-студия (дети)",
                 "class-1-badge": "Еженедельная группа",
-                "class-1-desc": "Развитие пространственного воображения и основ рисунка через увлекательные проекты.",
+                "class-1-desc": "Развитие пространственного воображения и основ рисунка.",
                 "class-2-title": "Мастер-класс (продвинутый)",
                 "class-2-badge": "По договоренности",
-                "class-2-desc": "Погружение в фигурную точность, драматические постановки и многослойный нарратив.",
+                "class-2-desc": "Погружение в фигурную точность и драматические постановки.",
                 "press-tag": "Признание",
                 "press-title": "Пресса и награды",
                 "read-article": "Читать статью",
@@ -859,10 +1208,354 @@
                 "modal-title": "Полный архив картин",
                 "modal-close": "Закрыть архив",
                 "footer-rights": "Базируется в Германии • Все права защищены"
+            },
+            pt: {
+                "meta-title": "Alexander Ivanovski | Belas Artes e Pintura",
+                "nav-biography": "Biografia",
+                "nav-wild-wild-west": "Wild Wild West",
+                "nav-paintings": "Pinturas",
+                "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Retratos",
+                "nav-classes": "Aulas de Arte",
+                "nav-press": "Imprensa e Prémios",
+                "get-in-touch": "Contacto",
+                "hero-subtitle": "Pintor e Artista",
+                "hero-title": "A Arte como Enquadramento",
+                "hero-desc": "Explorando relações humanas, drama psicológico e iluminação clássica inspirada pelo cinema europeu e velhos mestres.",
+                "hero-btn-explore": "Explorar Nova Série",
+                "hero-btn-archive": "Ver Arquivo Completo",
+                "bio-tag": "Sobre o Artista",
+                "bio-title": "Biografia e Filosofia",
+                "bio-statement": "“Alexander Ivanovski vê as composições como as declarações principais das suas ideias pictóricas, expressando monumentalidade e planeamento minucioso.”",
+                "bio-gallery-title": "Obras Selecionadas e Estudos Visuais",
+                "bio-early-life-title": "Primeiros Anos e Formação",
+                "bio-early-life-desc": "Nascido a 16 de novembro de 1972 em Karaganda, Cazaquistão. Estudou na Rússia, São Petersburgo e na Academia de Belas Artes de Nuremberga.",
+                "bio-style-title": "Estilo Artístico",
+                "bio-style-desc": "Foco figurativo dramático inspirado na luz dos Mestres Holandeses e no cinema de Bergman e Tarkovsky.",
+                "bio-career-title": "Vida Atual",
+                "bio-career-desc": "Reside em Fürth, Alemanha, e expõe regularmente na Europa e no resto do mundo.",
+                "bio-edu-title": "EDUCAÇÃO",
+                "edu-1": "Escola de arte em Karaganda / Cazaquistão",
+                "edu-2": "Universidade de Arte e Design em Krasnoturjinsk / Rússia",
+                "edu-3": "Academia de Arte de São Petersburgo",
+                "edu-4": "Academia de Belas Artes de Nuremberga",
+                "edu-5": "Academia de Verão de Salzburgo",
+                "bio-awards-title": "PRÉMIOS E DISTINÇÕES",
+                "award-1": "Nomeação como Aluno Mestre (Meisterschüler)",
+                "award-2": "Prémio de Reconhecimento Nürnberger Nachrichten",
+                "award-3": "Academia de Verão de Salzburgo",
+                "award-4": "Prémio Especial de Exposição por 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "LISTA DE EXPOSIÇÕES",
+                "wildwest-tag": "Coleção Mais Recente",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Explore a coleção mais recente com narrativas de fronteira e composições dinâmicas.",
+                "wildwest-view-all": "Ver todas as pinturas da coleção Wild Wild West",
+                "wildwest-modal-tag": "Coleção Wild Wild West",
+                "wildwest-modal-title": "Arquivo Wild Wild West",
+                "gallery-tag": "Arquivo Visual",
+                "gallery-title": "Pinturas em Destaque",
+                "gallery-view-all": "Ver Todas as Pinturas no Arquivo",
+                "swipe-note": "Deslize horizontalmente para ver mais obras",
+                "toystories-tag": "Série",
+                "toystories-desc": "Explore a coleção mais recente com composições narrativas únicas.",
+                "toystories-view-all": "Ver todas as pinturas da coleção Toy Stories",
+                "toystories-modal-tag": "Coleção Toy Stories",
+                "toystories-modal-title": "Arquivo Toy Stories",
+                "portraits-tag": "Estudos de Personagens",
+                "portraits-title": "Retratos",
+                "portraits-desc": "Explore a coleção de retratos com estudos expressivos.",
+                "portraits-view-all": "Ver todos os retratos",
+                "portraits-modal-tag": "Coleção de Retratos",
+                "portraits-modal-title": "Arquivo de Retratos",
+                "classes-tag": "Mentoria e Masterclasses",
+                "classes-title": "Aprenda Pintura Clássica e Narrativa",
+                "classes-desc": "Aulas privadas estruturadas para artistas de todas as idades.",
+                "classes-li-1": "Técnicas de Composição e Enquadramento",
+                "classes-li-2": "Treino de Óleo e Acrílico para Crianças e Adultos",
+                "classes-li-3": "Desenvolvimento de Portfólio Individual",
+                "classes-btn": "Reservar uma Aula",
+                "classes-overview-title": "Visão Geral das Aulas",
+                "class-1-title": "Atelier de Arte Jovem (Crianças)",
+                "class-1-badge": "Grupo Semanal",
+                "class-1-desc": "Incentivando a imaginação espacial e fundamentos do desenho.",
+                "class-2-title": "Masterclass (Avançado)",
+                "class-2-badge": "Por Acordo",
+                "class-2-desc": "Aprofundamento na precisão figurativa e narrativa.",
+                "press-tag": "Reconhecimento",
+                "press-title": "Imprensa e Prémios",
+                "read-article": "Ler Artigo",
+                "view-publication": "Ver Publicação",
+                "watch-video": "Ver Vídeo",
+                "read-post": "Ler Publicação",
+                "view-archive": "Ver Arquivo",
+                "view-pdf": "Ver PDF",
+                "view-flyer": "Ver Folheto",
+                "modal-tag": "Coleção Completa",
+                "modal-title": "Arquivo Completo de Pinturas",
+                "modal-close": "Fechar Arquivo",
+                "footer-rights": "Sediado na Alemanha • Todos os direitos reservados"
+            },
+            ar: {
+                "meta-title": "ألكسندر إيفانوفسكي | الفنون الجميلة والرسم",
+                "nav-biography": "السيرة الذاتية",
+                "nav-wild-wild-west": "الغرب المتوحش",
+                "nav-paintings": "اللوحات",
+                "nav-toy-stories": "قصص الألعاب",
+                "nav-portraits": "البورتريه",
+                "nav-classes": "دروس الفن",
+                "nav-press": "الصحافة والجوائز",
+                "get-in-touch": "تواصل معنا",
+                "hero-subtitle": "رسام وفنان",
+                "hero-title": "الفن كإطار",
+                "hero-desc": "استكشاف العلاقات الإنسانية والدراما النفسية والإضاءة الكلاسيكية المستوحاة من السينما الأوروبية والرواد الكبار.",
+                "hero-btn-explore": "استكشف السلسلة الجديدة",
+                "hero-btn-archive": "عرض الأرشيف الكامل",
+                "bio-tag": "عن الفنان",
+                "bio-title": "السيرة الذاتية والفيزيولوجيا الفنية",
+                "bio-statement": "«يرى ألكسندر إيفانوفسكي والتكوين البيان الرئيسي لأفكاره التصويرية. تتميز أعماله بالضخامة، والتخطيط المدروس، والعمق الدرامي.»",
+                "bio-gallery-title": "أعمال مختارة ودراسات بصرية",
+                "bio-early-life-title": "النشأة والتعليم",
+                "bio-early-life-desc": "ولد في 16 نوفمبر 1972 في كاراغاندا، كازاخستان. درس الفنون في كازاخستان وروسيا وأكاديمية سان بطرسبرغ، وحصل على درجة الماجستير من أكاديمية نورمبرغ.",
+                "bio-style-title": "الأسلوب الفني",
+                "bio-style-desc": "تركيز تام على الفن التشخيصي والعلاقات الإنسانية، مستوحى من الإضاءة الهولندية الكلاسيكية والسينما الدرامية.",
+                "bio-career-title": "الحياة الحالية",
+                "bio-career-desc": "يعيش ويعمل في فورث، ألمانيا، وتُعرض أعماله في مختلف أنحاء أوروبا والعالم.",
+                "bio-edu-title": "التعليم",
+                "edu-1": "مدرسة الفنون في كاراغاندا / كازاخستان",
+                "edu-2": "جامعة الفنون والتصميم في كراسنوتوريينسك / روسيا",
+                "edu-3": "أكاديمية الفنون في سان بطرسبرغ",
+                "edu-4": "دراسة الرسم الحر في أكاديمية نورمبرغ",
+                "edu-5": "أكاديمية سالزبورغ الصيفية",
+                "bio-awards-title": "الجوائز والتقديرات",
+                "award-1": "تعيين كطالب ماجستير (Meisterschüler)",
+                "award-2": "جائزة نورمبرغ للصحافة",
+                "award-3": "منحة أكاديمية سالزبورغ",
+                "award-4": "جائزة المعرض الخاص عن لوحة 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "قائمة المعارض",
+                "wildwest-tag": "أحدث المجموعات",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "استكشف أحدث سلسلة تضم تكوينات ديناميكية وسردية.",
+                "wildwest-view-all": "عرض جميع لوحات مجموعة الغرب المتوحش",
+                "wildwest-modal-tag": "مجموعة الغرب المتوحش",
+                "wildwest-modal-title": "أرشيف الغرب المتوحش",
+                "gallery-tag": "الأرشيف البصري",
+                "gallery-title": "لوحات مختارة",
+                "gallery-view-all": "عرض جميع اللوحات في الأرشيف",
+                "swipe-note": "اسحب أفقياً لمشاهدة المزيد من الأعمال",
+                "toystories-tag": "سلسلة",
+                "toystories-desc": "استكشف أحدث مجموعة تتميز بتكوينات سردية فريدة.",
+                "toystories-view-all": "عرض جميع اللوحات في مجموعة قصص الألعاب",
+                "toystories-modal-tag": "مجموعة قصص الألعاب",
+                "toystories-modal-title": "أرشيف قصص الألعاب",
+                "portraits-tag": "دراسات الشخصيات",
+                "portraits-title": "البورتريه",
+                "portraits-desc": "استكشف مجموعة البورتريه التي تضم دراسات شخصية عميقة.",
+                "portraits-view-all": "عرض جميع لوحات البورتريه",
+                "portraits-modal-tag": "مجموعة البورتريه",
+                "portraits-modal-title": "أرشيف البورتريه",
+                "classes-tag": "التعليم والدروس الفنية",
+                "classes-title": "تعلم الرسم الكلاسيكي والسردي",
+                "classes-desc": "جلسات خاصة وورش عمل مهيكلة للفنانين الطموحين من جميع الأعمار.",
+                "classes-li-1": "تقنيات التكوين والإطار",
+                "classes-li-2": "تدريب على الرسم بالزيت والأكريليك للأطفال والكبار",
+                "classes-li-3": "تطوير ملف الأعمال الشخصي",
+                "classes-btn": "حجز جلسة تعليمية",
+                "classes-overview-title": "نظرة عامة على الدروس",
+                "class-1-title": "استوديو الفن للشباب (الأطفال)",
+                "class-1-badge": "مجموعة أسبوعية",
+                "class-1-desc": "تنمية الخيال المكان واساسيات الرسم.",
+                "class-2-title": "دروس متقدمة (المستوى المتقدم)",
+                "class-2-badge": "حسب الاتفاق",
+                "class-2-desc": "التعمق في الدقة التشخيصية والسرد المتعدد الطبقات.",
+                "press-tag": "التكريم والتقدير",
+                "press-title": "الصحافة والجوائز",
+                "read-article": "قراءة المقال",
+                "view-publication": "عرض المطبوعة",
+                "watch-video": "شاهد الفيديو",
+                "read-post": "قراءة المنشور",
+                "view-archive": "عرض الأرشيف",
+                "view-pdf": "عرض PDF",
+                "view-flyer": "عرض المنشور الإعلاني",
+                "modal-tag": "المجموعة الكاملة",
+                "modal-title": "أرشيف اللوحات الكامل",
+                "modal-close": "إغلاق الأرشيف",
+                "footer-rights": "مقرنا في ألمانيا • جميع الحقوق محفوظة"
+            },
+            he: {
+                "meta-title": "אלכסנדר איוונובסקי | אמנות פלסטית וציור",
+                "nav-biography": "ביוגרפיה",
+                "nav-wild-wild-west": "המערב הפרוע",
+                "nav-paintings": "ציורים",
+                "nav-toy-stories": "סיפורי צעצועים",
+                "nav-portraits": "פורטרטים",
+                "nav-classes": "שיעורי אמנות",
+                "nav-press": "עיתונות ופרסים",
+                "get-in-touch": "צור קשר",
+                "hero-subtitle": "צייר ואמן",
+                "hero-title": "אמנות כמסגרת",
+                "hero-desc": "חקירת יחסים אנושיים, דרמה פסיכולוגית ותאורה קלאסית בהשראת הקולנוע האירופי והמאסטרים הישנים.",
+                "hero-btn-explore": "גלול לסדרות החדשות",
+                "hero-btn-archive": "צפה בארכיון המלא",
+                "bio-tag": "על האמן",
+                "bio-title": "ביוגרפיה ופילוסופיה",
+                "bio-statement": "“אלכסנדר איוונובסקי רואה בהרכב (קומפוזיציה) את האמירה המרכזית של רעיונותיו הציוריים, בעלת נוכחות מונומנטלית ותכנון מוקפד.”",
+                "bio-gallery-title": "עבודות נבחרות ומחקרים ויזואליים",
+                "bio-early-life-title": "חיים מוקדמים והשכלה",
+                "bio-early-life-desc": "נולד ב-16 בנובמבר 1972 בקרגנדה, קזחסטן. למד ברוסיה, סנט פטרסבורג ובאקדמיה לאמנויות בנירנברג.",
+                "bio-style-title": "סגנון אמנותי",
+                "bio-style-desc": "התמקדות פיגורטיבית בדרמה אנושית, בהשראת האור של המאסטרים ההולנדים וסרטים של טרקובסקי וברגמן.",
+                "bio-career-title": "חיים נוכחיים",
+                "bio-career-desc": "גר ועובד בפירט, גרמניה, ומציג בתערוכות ברחבי אירופה והעולם.",
+                "bio-edu-title": "השכלה",
+                "edu-1": "בית ספר לאמנות בקזחסטן",
+                "edu-2": "מכללה לאמנות ועיצוב ברוסיה",
+                "edu-3": "האקדמיה לאמנות סנט פטרסבורג",
+                "edu-4": "האקדמיה לאמנויות בנירנברג",
+                "edu-5": "אקדמיית הקיץ בזלצבורג",
+                "bio-awards-title": "פרסים ותארים",
+                "award-1": "תואר תלמיד מוסמך (Meisterschüler)",
+                "award-2": "פרס ההכרה של נירנברג",
+                "award-3": "מלגת אקדמיית זלצבורג",
+                "award-4": "פרס התערוכה המיוחדת על הציור 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "רשימת תערוכות",
+                "wildwest-tag": "האוסף החדש ביותר",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "חקור את הסדרה החדשה הכוללת נרטיבים דינמיים.",
+                "wildwest-view-all": "צפה בציורי אוסף המערב הפרוע",
+                "wildwest-modal-tag": "אוסף המערב הפרוע",
+                "wildwest-modal-title": "ארכיון המערב הפרוע",
+                "gallery-tag": "ארכיון ויזואלי",
+                "gallery-title": "ציורים נבחרים",
+                "gallery-view-all": "צפה בכל הציורים בארכיון",
+                "swipe-note": "חלק אופקית כדי לראות עוד יצירות",
+                "toystories-tag": "סדרה",
+                "toystories-desc": "חקור את האוסף החדש בעל הקומפוזיציות הנרטיביות.",
+                "toystories-view-all": "צפה בכל ציורי אוסף סיפורי הצעצועים",
+                "toystories-modal-tag": "אוסף סיפורי צעצועים",
+                "toystories-modal-title": "ארכיון סיפורי צעצועים",
+                "portraits-tag": "דמויות ודיוקנאות",
+                "portraits-title": "פורטרטים",
+                "portraits-desc": "חקור את אוסף הפורטרטים והדמויות.",
+                "portraits-view-all": "צפה בכל הפורטרטים",
+                "portraits-modal-tag": "אוסף פורטרטים",
+                "portraits-modal-title": "ארכיון פורטרטים",
+                "classes-tag": "סדנאות ושיעורים",
+                "classes-title": "למד ציור קלאסי ונרטיבי",
+                "classes-desc": "שיעורים פרטיים מובנים לאמנים בכל הגילאים.",
+                "classes-li-1": "טכניקות קומפוזיציה ומסגור",
+                "classes-li-2": "אימון בשמן ואקריليك לילדים ומבוגרים",
+                "classes-li-3": "פיתוח תיק עבודות אישי",
+                "classes-btn": "הזמן שיעור",
+                "classes-overview-title": "סקירת שיעורים",
+                "class-1-title": "סדנת אמנות לנוער (ילדים)",
+                "class-1-badge": "קבוצה שבועית",
+                "class-1-desc": "פיתוח דמיון מרחבי ויסודות הרישום.",
+                "class-2-title": "כיתת אמן (מתקדמים)",
+                "class-2-badge": "בתאום מראש",
+                "class-2-desc": "העמקה בדיוק פיגורטיבי ובניית דרמה.",
+                "press-tag": "הכרה",
+                "press-title": "עיתונות ופרסים",
+                "read-article": "קרא כתבה",
+                "view-publication": "צפה בפרסום",
+                "watch-video": "צפה בסרטון",
+                "read-post": "קרא פוסט",
+                "view-archive": "צפה בארכיון",
+                "view-pdf": "צפה ב-PDF",
+                "view-flyer": "צפה בעלון",
+                "modal-tag": "האוסף המלא",
+                "modal-title": "ארכיון ציורים מלא",
+                "modal-close": "סגור ארכיון",
+                "footer-rights": "מבוסס בגרמניה • כל הזכויות שמורות"
+            },
+            fr: {
+                "meta-title": "Alexander Ivanovski | Beaux-Arts & Peinture",
+                "nav-biography": "Biographie",
+                "nav-wild-wild-west": "Wild Wild West",
+                "nav-paintings": "Peintures",
+                "nav-toy-stories": "Toy Stories",
+                "nav-portraits": "Portraits",
+                "nav-classes": "Cours d'Art",
+                "nav-press": "Presse & Prix",
+                "get-in-touch": "Contact",
+                "hero-subtitle": "Peintre & Artiste",
+                "hero-title": "L'Art comme Cadrage",
+                "hero-desc": "Exploration des relations humaines, du drame psychologique et de la lumière classique inspirée du cinéma européen et des grands maîtres.",
+                "hero-btn-explore": "Explorer la Nouvelle Série",
+                "hero-btn-archive": "Voir l'Archive Complète",
+                "bio-tag": "À propos de l'Artiste",
+                "bio-title": "Biographie & Philosophie",
+                "bio-statement": "« Alexander Ivanovski considère les compositions comme les déclarations principales de ses idées picturales. Elles possèdent une monumentalité, un grand format et une planification rigoureuse. »",
+                "bio-gallery-title": "Œuvres Choisies & Études Visuelles",
+                "bio-early-life-title": "Jeunesse & Formation",
+                "bio-early-life-desc": "Né le 16 novembre 1972 à Karaganda, Kazakhstan. Formation artistique en Russie, à Saint-Pétersbourg et à l'Académie des Beaux-Arts de Nuremberg.",
+                "bio-style-title": "Style Artistique & Philosophie",
+                "bio-style-desc": "Focus figuratif dramatique inspiré par le clair-obscur des maîtres flamands et les grands cinéastes comme Tarkovski et Bergman.",
+                "bio-career-title": "Vie Actuelle & Carrière",
+                "bio-career-desc": "Vit et travaille à Fürth, en Allemagne. Expose dans toute l'Europe et à l'international.",
+                "bio-edu-title": "ÉDUCATION",
+                "edu-1": "École d'art à Karaganda / Kazakhstan",
+                "edu-2": "Université d'Art et de Design à Krasnotourinsk / Russie",
+                "edu-3": "Académie d'Art de Saint-Pétersbourg",
+                "edu-4": "Académie des Beaux-Arts de Nuremberg",
+                "edu-5": "Académie d'été de Salzbourg",
+                "bio-awards-title": "PRIX ET DISTINCTIONS",
+                "award-1": "Nomination comme Étudiant Maître (Meisterschüler)",
+                "award-2": "Prix de Reconnaissance Nürnberger Nachrichten",
+                "award-3": "Académie d'été de Salzbourg",
+                "award-4": "Prix Spécial d'Exposition pour 'Zu neuen Horizonten'",
+                "bio-exhibitions-title": "LISTE DES EXPOSITIONS",
+                "wildwest-tag": "Nouvelle Collection",
+                "wildwest-title": "Wild Wild West",
+                "wildwest-desc": "Explorez la nouvelle collection axée sur des récits captivants.",
+                "wildwest-view-all": "Voir toutes les peintures de la collection Wild Wild West",
+                "wildwest-modal-tag": "Collection Wild Wild West",
+                "wildwest-modal-title": "Archive Wild Wild West",
+                "gallery-tag": "Archive Visuelle",
+                "gallery-title": "Peintures en Vedette",
+                "gallery-view-all": "Voir Toutes les Peintures dans l'Archive",
+                "swipe-note": "Faites défiler horizontalement pour voir plus d'œuvres",
+                "toystories-tag": "Série",
+                "toystories-desc": "Explorez la dernière collection proposant des compositions narratives uniques.",
+                "toystories-view-all": "Voir toutes les peintures de la collection Toy Stories",
+                "toystories-modal-tag": "Collection Toy Stories",
+                "toystories-modal-title": "Archive Toy Stories",
+                "portraits-tag": "Études de Personnages",
+                "portraits-title": "Portraits",
+                "portraits-desc": "Explorez la collection de portraits et d'études expressives.",
+                "portraits-view-all": "Voir tous les portraits",
+                "portraits-modal-tag": "Collection de Portraits",
+                "portraits-modal-title": "Archive de Portraits",
+                "classes-tag": "Mentorat & Masterclasses",
+                "classes-title": "Apprendre la Peinture Classique et Narrative",
+                "classes-desc": "Cours privés structurés pour artistes de tous âges.",
+                "classes-li-1": "Techniques de Composition et de Cadrage",
+                "classes-li-2": "Formation Huile & Acrylique Enfants et Adultes",
+                "classes-li-3": "Développement de Portfolio Individuel",
+                "classes-btn": "Réserver une Session",
+                "classes-overview-title": "Aperçu des Cours",
+                "class-1-title": "Atelier Jeunesse (Enfants)",
+                "class-1-badge": "Groupe Hebdomadaire",
+                "class-1-desc": "Stimuler l'imagination spatiale et les bases du dessin.",
+                "class-2-title": "Masterclass (Avancé)",
+                "class-2-badge": "Sur Rendez-vous",
+                "class-2-desc": "Approfondissement de la précision figurative et mise en scène.",
+                "press-tag": "Reconnaissance",
+                "press-title": "Presse & Prix",
+                "read-article": "Lire l'Article",
+                "view-publication": "Voir la Publication",
+                "watch-video": "Regarder la Vidéo",
+                "read-post": "Lire le Billet",
+                "view-archive": "Voir l'Archive",
+                "view-pdf": "Voir le PDF",
+                "view-flyer": "Voir le Dépliant",
+                "modal-tag": "Collection Complète",
+                "modal-title": "Archive Complète des Peintures",
+                "modal-close": "Fermer l'Archive",
+                "footer-rights": "Basé en Allemagne • Tous droits réservés"
             }
         };
 
-        // Automatic Language Detection (Browser language setting or location check fallback)
+        // Automatic Language Detection
         function detectUserLanguage() {
             const browserLang = navigator.language || navigator.userLanguage;
             if (browserLang) {
@@ -871,7 +1564,7 @@
                     return shortLang;
                 }
             }
-            return 'en'; // default fallback
+            return 'en';
         }
 
         let currentLang = detectUserLanguage();
@@ -880,6 +1573,13 @@
             currentLang = lang;
             document.getElementById('lang-selector').value = lang;
             
+            // Handle Right-to-Left languages for Arabic and Hebrew
+            if (lang === 'ar' || lang === 'he') {
+                document.documentElement.setAttribute('dir', 'rtl');
+            } else {
+                document.documentElement.removeAttribute('dir');
+            }
+
             // Translate all elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -922,7 +1622,7 @@
             document.getElementById('image-viewer-modal').classList.add('hidden');
         }
 
-        // Populate Swipeable Row for Wild Wild West (Randomized on every page load)
+        // Populate Swipeable Row for Wild Wild West
         const wildWestGrid = document.getElementById('wildwest-grid');
         let wildWestHTML = '';
         const randomizedWildWest = shuffleArray(wildWildWestImages);
@@ -958,7 +1658,7 @@
         });
         swipeableGrid.innerHTML = swipeHTML;
 
-        // Populate Swipeable Row for Toy Stories (Randomized on every page load)
+        // Populate Swipeable Row for Toy Stories
         const toyStoriesGrid = document.getElementById('toystories-grid');
         let toyHTML = '';
         const randomizedToyStories = shuffleArray(toyStoriesImages);
@@ -976,7 +1676,7 @@
         });
         toyStoriesGrid.innerHTML = toyHTML;
 
-        // Populate Swipeable Row for Portraits (Randomized on every page load)
+        // Populate Swipeable Row for Portraits
         const portraitsGrid = document.getElementById('portraits-grid');
         let portraitsHTML = '';
         const randomizedPortraits = shuffleArray(portraitsImages);
@@ -994,7 +1694,7 @@
         });
         portraitsGrid.innerHTML = portraitsHTML;
 
-        // Populate Full Archive Modal Grid Automatically
+        // Populate Full Archive Modal Grid
         const modalGrid = document.getElementById('modal-image-grid');
         let archiveHTML = '';
         allPaintings.forEach((img, index) => {
@@ -1009,7 +1709,7 @@
         });
         modalGrid.innerHTML = archiveHTML;
 
-        // Populate Wild Wild West Modal Grid Automatically
+        // Populate Wild Wild West Modal Grid
         const wildWestModalGrid = document.getElementById('modal-wildwest-grid');
         let wildWestModalHTML = '';
         wildWildWestImages.forEach((img, index) => {
@@ -1024,7 +1724,7 @@
         });
         wildWestModalGrid.innerHTML = wildWestModalHTML;
 
-        // Populate Toy Stories Modal Grid Automatically
+        // Populate Toy Stories Modal Grid
         const toyModalGrid = document.getElementById('modal-toystories-grid');
         let toyModalHTML = '';
         toyStoriesImages.forEach((img, index) => {
@@ -1039,7 +1739,7 @@
         });
         toyModalGrid.innerHTML = toyModalHTML;
 
-        // Populate Portraits Modal Grid Automatically
+        // Populate Portraits Modal Grid
         const portraitsModalGrid = document.getElementById('modal-portraits-grid');
         let portraitsModalHTML = '';
         portraitsImages.forEach((img, index) => {
